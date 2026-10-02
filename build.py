@@ -268,6 +268,7 @@ def _page(path, title, desc, ld, body, current, extra_head='', robots='index, fo
 <html lang="es-EC">
 <head>
 <meta charset="utf-8">
+<script>if(location.hostname==='awsugecuador.com')location.replace('https://www.awsugecuador.com'+location.pathname+location.search+location.hash)</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
 new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
