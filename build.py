@@ -382,6 +382,7 @@ PEOPLE = [
   dict(id="vanessa-barreiro", n="Vanessa Barreiro", r="User Group Leader", extra=None, img="vanessa-barreiro", h=768, links=[]),
   dict(id="paul-rizo", n="Paul Rizo", r="User Group Leader", extra=None, img="paul-rizo", h=765,
        links=[("https://www.linkedin.com/in/paul-rizo","fa-brands fa-linkedin-in","LinkedIn"),("https://www.instagram.com/paull_rl/","fa-brands fa-instagram","Instagram")]),
+  dict(id="jonathan-teran", n="Jonathan Teran", r="User Group Leader", extra=None, img="jonathan-teran", h=768, links=[]),
 ]
 def team_items(home):
     out = ''
@@ -501,8 +502,8 @@ def communities_ld():
 
 FAQ = [
  ("¿Qué es AWS User Group Ecuador?", "Es la primera comunidad de usuarios de Amazon Web Services (AWS) en Ecuador. Reúne a desarrolladores, arquitectos, estudiantes y líderes de tecnología para aprender y compartir conocimiento sobre la nube de AWS en meetups, talleres y el AWS Community Day Ecuador. Es una comunidad independiente, organizada por voluntarios.", None),
- ("¿Quién fundó AWS User Group Ecuador?", "AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por Alexis Polo, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro y Paul Rizo y un equipo de voluntarios.",
-  'AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por <a href="/equipo/#alexis-polo">Alexis Polo</a>, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro y Paul Rizo y un equipo de voluntarios.'),
+ ("¿Quién fundó AWS User Group Ecuador?", "AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por Alexis Polo, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran y un equipo de voluntarios.",
+  'AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por <a href="/equipo/#alexis-polo">Alexis Polo</a>, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran y un equipo de voluntarios.'),
  ("¿Cuál es la primera comunidad de AWS en Ecuador?", "AWS User Group Ecuador es la primera comunidad de AWS del Ecuador. Desde 2022 organiza meetups, talleres, retos de certificación y el AWS Community Day Ecuador, y en febrero de 2027 cumple 5 años.", None),
  ("¿Necesito experiencia en AWS para unirme?", "No. La comunidad está abierta a quien da sus primeros pasos en la nube y a quien ya trabaja con AWS a diario. Cada evento indica su nivel para que elijas el que te sirve.", None),
  ("¿Hay comunidad de AWS en Quito, Guayaquil y Cuenca?", "Sí. AWS User Group Ecuador hace eventos presenciales en Quito, Guayaquil y Cuenca, y sesiones online abiertas a todo el país. Todos los eventos se publican en el grupo de Meetup de AWS User Group Ecuador.",
@@ -534,7 +535,7 @@ for n in ld['@graph']:
         n['description'] = 'AWS User Group Ecuador es la primera comunidad de usuarios de Amazon Web Services (AWS) en Ecuador, fundada el 10 de febrero de 2022 por Alexis Polo. Organiza meetups, talleres, retos de certificación AWS y el AWS Community Day Ecuador en Quito, Guayaquil y Cuenca.'
         n['areaServed'] = [{"@type": "Country", "name": "Ecuador"}, {"@type": "City", "name": "Quito"}, {"@type": "City", "name": "Guayaquil"}, {"@type": "City", "name": "Cuenca"}]
         n['founder'] = {"@type": "Person", "@id": SITE + "/equipo/#alexis-polo", "name": "Alexis Polo", "jobTitle": "Líder fundador de AWS User Group Ecuador", "url": "https://www.alexispolo.com", "sameAs": ["https://www.linkedin.com/in/alexispolo", "https://www.instagram.com/aledpolo/", "https://www.alexispolo.com"]}
-        n['member'] = [{"@id": SITE + "/equipo/#alexis-polo"}, {"@id": SITE + "/equipo/#vanessa-barreiro"}, {"@id": SITE + "/equipo/#paul-rizo"}]
+        n['member'] = [{"@id": SITE + "/equipo/#alexis-polo"}, {"@id": SITE + "/equipo/#vanessa-barreiro"}, {"@id": SITE + "/equipo/#paul-rizo"}, {"@id": SITE + "/equipo/#jonathan-teran"}]
         n['knowsAbout'] += ["AWS Community Day", "Serverless", "Seguridad en la nube", "DevOps"]
     if n['@type'] == 'WebPage': n['primaryImageOfPage'] = SITE + '/img/community-day-2024-1600.webp'
     if n['@type'] == 'WebPage': n['name'] = 'AWS User Group Ecuador, la primera comunidad AWS'
@@ -929,7 +930,7 @@ eq_body = f'''
 graph = [ORG, {"@type":"AboutPage","@id":SITE+"/equipo/#webpage","url":SITE+"/equipo/","name":"Equipo de AWS User Group Ecuador","inLanguage":"es-EC","isPartOf":{"@id":SITE+"/#website"}}, crumbs("Equipo","/equipo/")] + person_ld
 open('equipo/index.html','w',encoding='utf-8').write(page('/equipo/',
   'Alexis Polo, líder fundador | Equipo AWS User Group Ecuador',
-  'Alexis Polo es el líder fundador de AWS User Group Ecuador, la primera comunidad de AWS del país. Conoce al equipo: Alexis Polo, Vanessa Barreiro y Paul Rizo.',
+  'Alexis Polo es el líder fundador de AWS User Group Ecuador, la primera comunidad AWS del país. Lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran.',
   dump(graph), eq_body, '/equipo/'))
 
 # ---------- 404 ----------
