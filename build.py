@@ -180,9 +180,9 @@ JS = open('js/main.js', encoding='utf-8').read().strip()
 MEETUP = 'https://www.meetup.com/aws-ecuador/'
 
 def header(current):
-    items = [('/#comunidad','Nosotros'),('/eventos/','Eventos'),('/equipo/','Equipo'),('/#sponsors','Sponsors'),('/#preguntas','Preguntas')]
+    items = [('/eventos/','Eventos'),('/aws-community-day/','Community Day'),('/aws-reinvent/','re:Invent'),('/comunidades/','Comunidades'),('/equipo/','Equipo'),('/preguntas-frecuentes/','Preguntas')]
     lis = ''.join(f'<li><a href="{h}"{" aria-current=\"page\"" if h==current else ""}>{t}</a></li>' for h,t in items)
-    return f'''<a class="announce" href="/#aniversario"><span class="dot" aria-hidden="true"></span>Cumplimos 5 años el 10 de febrero de 2027<span class="go">celebra con nosotros <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
+    return f'''<a class="announce" href="/aniversario/"><span class="dot" aria-hidden="true"></span>Cumplimos 5 años el 10 de febrero de 2027<span class="go">celebra con nosotros <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span></a>
 <header class="site-header">
   <div class="wrap header-row">
     <a class="brand" href="/" aria-label="AWS User Group Ecuador, inicio">
@@ -230,9 +230,11 @@ FOOTER = f'''<footer class="site-footer" id="unete">
           <li><a href="/">Inicio</a></li>
           <li><a href="/eventos/">Eventos</a></li>
           <li><a href="/equipo/">Equipo</a></li>
-          <li><a href="/#community-day">AWS Community Day</a></li>
-          <li><a href="/#momentos">Fotos y momentos</a></li>
-          <li><a href="/#preguntas">Preguntas frecuentes</a></li>
+          <li><a href="/aws-community-day/">AWS Community Day</a></li>
+          <li><a href="/aws-reinvent/">AWS re:Invent</a></li>
+          <li><a href="/comunidades/">Comunidades AWS</a></li>
+          <li><a href="/aniversario/">5 años</a></li>
+          <li><a href="/preguntas-frecuentes/">Preguntas frecuentes</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-labelledby="f-participa">
@@ -276,7 +278,7 @@ def _page(path, title, desc, ld, body, current, extra_head='', robots='index, fo
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="keywords" content="AWS User Group Ecuador, comunidad AWS Ecuador, AWS re:Invent Ecuador, AWS User Group Quito, AWS Women Ecuador, AWS Student Builder Group Ecuador, AWS Cloud Club Ecuador, primera comunidad de AWS en Ecuador, Alexis Polo, líder fundador AWS User Group Ecuador, Amazon Web Services Ecuador, AWS Community Day Ecuador, AWS Quito, AWS Guayaquil, AWS Cuenca, certificaciones AWS Ecuador, eventos de tecnología Ecuador, meetups cloud Ecuador, computación en la nube Ecuador">
+<meta name="keywords" content="AWS Ecuador, AWS User Group Ecuador, AWS User Group en Ecuador, comunidad AWS, comunidad AWS Ecuador, comunidad AWS en Ecuador, cloud Ecuador, comunidad cloud Ecuador, Amazon Web Services Ecuador, AWS Community Day Ecuador, AWS Quito, AWS Guayaquil, AWS Cuenca, certificación AWS Ecuador, Alexis Polo, líder fundador AWS User Group Ecuador, primera comunidad de AWS en Ecuador, AWS re:Invent Ecuador, AWS Women Ecuador, AWS Student Builder Group Ecuador">
 <meta name="author" content="AWS User Group Ecuador · Alexis Polo">
 {can}<meta name="robots" content="{robots}">
 <meta name="theme-color" content="#161D26">
@@ -505,23 +507,29 @@ FAQ = [
  ("¿Quién fundó AWS User Group Ecuador?", "AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por Alexis Polo, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran y un equipo de voluntarios.",
   'AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por <a href="/equipo/#alexis-polo">Alexis Polo</a>, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran y un equipo de voluntarios.'),
  ("¿Cuál es la primera comunidad de AWS en Ecuador?", "AWS User Group Ecuador es la primera comunidad de AWS del Ecuador. Desde 2022 organiza meetups, talleres, retos de certificación y el AWS Community Day Ecuador, y en febrero de 2027 cumple 5 años.", None),
+ ("¿Existe una comunidad de AWS en Ecuador?", "Sí. AWS User Group Ecuador es la comunidad AWS Ecuador: la primera comunidad de Amazon Web Services del país, con meetups, talleres y el AWS Community Day en Quito, Guayaquil y Cuenca, además de sesiones online.", None),
+ ("¿Dónde aprender AWS y cloud en Ecuador?", "En AWS User Group Ecuador aprendes AWS y cloud con la comunidad: meetups para empezar, talleres prácticos, retos para preparar tu certificación AWS y el AWS Community Day Ecuador, el gran evento anual de la comunidad.", None),
  ("¿Necesito experiencia en AWS para unirme?", "No. La comunidad está abierta a quien da sus primeros pasos en la nube y a quien ya trabaja con AWS a diario. Cada evento indica su nivel para que elijas el que te sirve.", None),
  ("¿Hay comunidad de AWS en Quito, Guayaquil y Cuenca?", "Sí. AWS User Group Ecuador hace eventos presenciales en Quito, Guayaquil y Cuenca, y sesiones online abiertas a todo el país. Todos los eventos se publican en el grupo de Meetup de AWS User Group Ecuador.",
   'Sí. AWS User Group Ecuador hace eventos presenciales en Quito, Guayaquil y Cuenca, y sesiones online abiertas a todo el país. Todos los eventos se publican en el <a href="https://www.meetup.com/aws-ecuador/" rel="noopener" target="_blank">grupo de Meetup de AWS User Group Ecuador</a>.'),
  ("¿Qué comunidades de AWS hay en Ecuador?", "Además de AWS User Group Ecuador, existen AWS User Group Quito, AWS Women Ecuador, AWS User Group Security Ecuador y Student Builder Groups en universidades como ESPOL, Universidad de Guayaquil, ITB, PUCE, UDLA, UIDE, Universidad de Cuenca y ULEAM en Manta.",
   'Además de AWS User Group Ecuador, existen AWS User Group Quito, AWS Women Ecuador, AWS User Group Security Ecuador y Student Builder Groups en universidades como ESPOL, Universidad de Guayaquil, ITB, PUCE, UDLA, UIDE, Universidad de Cuenca y ULEAM en Manta. <a href="/#comunidades">Ver sus Meetups</a>.'),
  ("¿Cuándo es el AWS Community Day Ecuador?", "El AWS Community Day Ecuador se realiza una vez al año y cambia de ciudad: la 2.ª edición fue en la ESPOL de Guayaquil (2024), la 3.ª en la UDLA de Quito (2025) y la 4.ª en la Universidad Politécnica Salesiana de Cuenca (2026). La próxima edición se anuncia en Meetup.", None),
+ ("¿Cómo celebrará AWS User Group Ecuador sus 5 años?", "El 10 de febrero de 2027 AWS User Group Ecuador cumple 5 años y lo celebrará con 5 eventos presenciales en ciudades como Guayaquil, Quito, Manta, Loja, Ambato y Machala. Las fechas y sedes se anunciarán en Meetup.",
+  'El 10 de febrero de 2027 AWS User Group Ecuador cumple 5 años y lo celebrará con 5 eventos presenciales en ciudades como Guayaquil, Quito, Manta, Loja, Ambato y Machala. Las fechas y sedes se anunciarán en Meetup. <a href="/aniversario/">Ver el aniversario</a>.'),
  ("¿La comunidad ayuda a obtener una certificación de AWS?", "Sí. Organizamos retos y sesiones de estudio pensados para preparar las certificaciones de AWS, y puedes resolver dudas con personas que ya se certificaron.", None),
  ("¿Cómo puedo dar una charla en un meetup?", "Escríbenos a hello@awsugecuador.com con el tema, un resumen corto y tu nivel de experiencia. Buscamos charlas de todos los niveles, especialmente casos reales construidos en AWS.",
   'Escríbenos a <a href="mailto:hello@awsugecuador.com">hello@awsugecuador.com</a> con el tema, un resumen corto y tu nivel de experiencia. Buscamos charlas de todos los niveles, especialmente casos reales construidos en AWS.'),
  ("¿Cómo puede mi empresa patrocinar a la comunidad?", "Escríbenos a hello@awsugecuador.com. Las empresas pueden apoyar con espacio para eventos, logística o patrocinio del AWS Community Day Ecuador.",
   'Escríbenos a <a href="mailto:hello@awsugecuador.com">hello@awsugecuador.com</a>. Las empresas pueden apoyar con espacio para eventos, logística o patrocinio del AWS Community Day Ecuador.'),
 ]
-faq_html = ''.join(f'''
+def faq_items(items):
+    return ''.join(f'''
         <details>
           <summary>{q}</summary>
           <div class="answer"><p>{h or a}</p></div>
-        </details>''' for q, a, h in FAQ)
+        </details>''' for q, a, h in items)
+faq_html = faq_items(FAQ[:6])
 
 # ---------- HOME ----------
 ld = json.loads(home_ld)
@@ -530,16 +538,19 @@ for n in ld['@graph']:
         n['sameAs'] += ["https://www.instagram.com/ecuadoraws", "https://www.flickr.com/photos/203738323@N04/"]
         n['sameAs'] = [u.replace('https://www.youtube.com/channel/UCgzEFlDd-KR0BL5rlOVY7KQ','https://www.youtube.com/@awsugecuador4610') for u in n['sameAs'] if 'discord' not in u] + ["https://www.tiktok.com/@awsecuador"]
         n['foundingDate'] = '2022-02-10'
-        n['alternateName'] = ["AWS UG Ecuador", "AWS Ecuador", "Comunidad AWS Ecuador", "AWS User Group Quito", "AWS User Group Guayaquil", "AWS User Group Cuenca"]
+        n['alternateName'] = ["AWS Ecuador", "AWS UG Ecuador", "AWS User Group en Ecuador", "Comunidad AWS Ecuador", "Comunidad AWS en Ecuador", "AWS User Group Quito", "AWS User Group Guayaquil", "AWS User Group Cuenca"]
         n['slogan'] = 'La primera comunidad de AWS del Ecuador'
         n['description'] = 'AWS User Group Ecuador es la primera comunidad de usuarios de Amazon Web Services (AWS) en Ecuador, fundada el 10 de febrero de 2022 por Alexis Polo. Organiza meetups, talleres, retos de certificación AWS y el AWS Community Day Ecuador en Quito, Guayaquil y Cuenca.'
         n['areaServed'] = [{"@type": "Country", "name": "Ecuador"}, {"@type": "City", "name": "Quito"}, {"@type": "City", "name": "Guayaquil"}, {"@type": "City", "name": "Cuenca"}]
         n['founder'] = {"@type": "Person", "@id": SITE + "/equipo/#alexis-polo", "name": "Alexis Polo", "jobTitle": "Líder fundador de AWS User Group Ecuador", "url": "https://www.alexispolo.com", "sameAs": ["https://www.linkedin.com/in/alexispolo", "https://www.instagram.com/aledpolo/", "https://www.alexispolo.com"]}
         n['member'] = [{"@id": SITE + "/equipo/#alexis-polo"}, {"@id": SITE + "/equipo/#vanessa-barreiro"}, {"@id": SITE + "/equipo/#paul-rizo"}, {"@id": SITE + "/equipo/#jonathan-teran"}]
         n['knowsAbout'] += ["AWS Community Day", "Serverless", "Seguridad en la nube", "DevOps"]
+    if n['@type'] == 'WebSite':
+        n['alternateName'] = ["AWS Ecuador", "AWS UG Ecuador", "Comunidad AWS Ecuador"]
     if n['@type'] == 'WebPage': n['primaryImageOfPage'] = SITE + '/img/community-day-2024-1600.webp'
-    if n['@type'] == 'WebPage': n['name'] = 'AWS User Group Ecuador, la primera comunidad AWS'
-    if n['@type'] == 'FAQPage': n['mainEntity'] = [{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a,_ in FAQ]
+    if n['@type'] == 'WebPage': n['name'] = 'AWS Ecuador | AWS User Group Ecuador, comunidad AWS'
+    if n['@type'] == 'FAQPage': n['mainEntity'] = []
+ld['@graph'] = [n for n in ld['@graph'] if n['@type'] != 'FAQPage']
 ld['@graph'].append(communities_ld())
 home_ld = json.dumps(ld, ensure_ascii=False, indent=2)
 
@@ -549,7 +560,7 @@ home_body = f'''
       <div>
         <p class="prompt" aria-hidden="true"><span class="kw">if</span> building: <span class="fn">start_here</span>(<span class="str">"ecuador"</span>)</p>
         <h1 id="hero-title">La comunidad de <span class="hl">AWS</span> en Ecuador<span class="cursor" aria-hidden="true"></span></h1>
-        <p class="hero-lede"><strong>Somos AWS User Group Ecuador, la primera comunidad de AWS del país.</strong> Aquí aprendes Amazon Web Services junto a quienes construyen en la nube todos los días: meetups, talleres, retos de certificación y el AWS Community Day, en Quito, Guayaquil, Cuenca y online.</p>
+        <p class="hero-lede"><strong>Somos AWS User Group Ecuador, la primera comunidad AWS en Ecuador.</strong> Aquí aprendes Amazon Web Services junto a quienes construyen en la nube todos los días: meetups, talleres, retos de certificación y el AWS Community Day, en Quito, Guayaquil, Cuenca y online.</p>
         <div class="hero-actions">
           <a class="btn" href="{MEETUP}" rel="noopener" target="_blank"><i class="fa-brands fa-meetup" aria-hidden="true"></i>Únete en Meetup</a>
           <a class="btn btn-ghost" href="/eventos/">Ver eventos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
@@ -586,7 +597,7 @@ home_body = f'''
         <div class="aniv-body">
           <p class="prompt" aria-hidden="true"><span class="kw">const</span> aniversario = <span class="str">"2027-02-10"</span></p>
           <h2 class="h2" id="aniv-title">Cumplimos 5 años de comunidad</h2>
-          <p class="aniv-lede">El <strong><time datetime="2027-02-10">10 de febrero de 2027</time></strong> AWS User Group Ecuador cumple 5 años aprendiendo y construyendo juntos en la nube. Lo vamos a celebrar con toda la comunidad: muy pronto anunciaremos los detalles en Meetup.</p>
+          <p class="aniv-lede">El <strong><time datetime="2027-02-10">10 de febrero de 2027</time></strong> AWS User Group Ecuador cumple 5 años aprendiendo y construyendo juntos en la nube. Lo celebraremos con <strong>5 eventos presenciales</strong> en ciudades como Guayaquil, Quito, Manta, Loja, Ambato y Machala. Fechas y sedes, muy pronto en Meetup.</p>
           <div class="countdown" role="timer" data-countdown="2027-02-10T00:00:00-05:00" aria-label="Cuenta regresiva para el aniversario">
             <div><span data-u="d">--</span><small>días</small></div>
             <div><span data-u="h">--</span><small>horas</small></div>
@@ -596,6 +607,7 @@ home_body = f'''
           <div class="hero-actions">
             <a class="btn" href="{MEETUP}" rel="noopener" target="_blank"><i class="fa-brands fa-meetup" aria-hidden="true"></i>Avísame en Meetup</a>
             <a class="btn btn-ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=5%20a%C3%B1os%20de%20AWS%20User%20Group%20Ecuador&amp;dates=20270210/20270211&amp;details=Celebramos%205%20a%C3%B1os%20de%20la%20comunidad%20de%20AWS%20en%20Ecuador.%20Detalles%20en%20https%3A%2F%2Fwww.awsugecuador.com%2F" rel="noopener" target="_blank"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>Guardar la fecha</a>
+            <a class="btn btn-ghost" href="/aniversario/">Nuestra historia <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -607,9 +619,10 @@ home_body = f'''
       <div class="section-head split-head">
         <div>
           <span class="eyebrow">por qué unirte</span>
-          <h2 id="comunidad-title">Aprender la nube es más fácil en comunidad</h2>
+          <h2 id="comunidad-title">Aprende AWS y cloud en comunidad</h2>
         </div>
-        <p>AWS User Group Ecuador es la primera comunidad de Amazon Web Services del país: nació el 10 de febrero de 2022 y forma parte de la red global de AWS User Groups. Es independiente y la organizan voluntarios. Llegan desarrolladores, arquitectos cloud, estudiantes y líderes de tecnología de Quito, Guayaquil y Cuenca, desde quien abre su primera cuenta de AWS hasta quien opera cargas en producción.</p>
+        <p>¿Buscas AWS en Ecuador? AWS User Group Ecuador es la comunidad AWS Ecuador: el punto de encuentro de quienes aprenden y trabajan con Amazon Web Services y cloud en el país, con meetups, certificación AWS y el AWS Community Day en Quito, Guayaquil y Cuenca.</p>
+        <p style="margin-top:14px">Es la primera comunidad de Amazon Web Services del país: nació el 10 de febrero de 2022 y forma parte de la red global de AWS User Groups. Es independiente y la organizan voluntarios. Llegan desarrolladores, arquitectos cloud, estudiantes y líderes de tecnología de Quito, Guayaquil y Cuenca, desde quien abre su primera cuenta de AWS hasta quien opera cargas en producción.</p>
       </div>
       <ul class="bento">
         <li class="cell hi reveal"><span class="tag"># start_here</span><h3>De tu primera cuenta de AWS a producción.</h3><p>Aquí compartimos lo que funciona, lo que falló y lo que aprendimos en el camino.</p></li>
@@ -637,6 +650,7 @@ home_body = f'''
         </dl>
         <div class="actions">
           <a class="btn btn-purple" href="https://www.meetup.com/aws-ecuador/events/314902222/" rel="noopener" target="_blank">Ver la edición 2026 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+          <a class="btn btn-ghost" href="/aws-community-day/">Todas las ediciones <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -649,6 +663,7 @@ home_body = f'''
         <h2 class="h2" id="reinvent-title">De la Mitad del Mundo a AWS re:Invent</h2>
         <p class="muted" style="margin-top:20px;max-width:48ch">La comunidad también viaja. Llevamos un pedacito de la Mitad del Mundo hasta Las Vegas, a AWS re:Invent, la conferencia de nube más grande del mundo, para conectar con la comunidad global de AWS y traer de vuelta lo aprendido a Ecuador.</p>
         <div class="tags" style="margin-top:24px"><span class="tag"># reinvent</span><span class="tag"># las-vegas</span><span class="tag"># comunidad-global</span></div>
+        <p style="margin-top:24px"><a class="link" href="/aws-reinvent/">La comunidad en AWS re:Invent <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
       </div>
       <figure class="reveal">
         <img src="/img/momentos/reinvent-1024.webp" srcset="/img/momentos/reinvent-480.webp 480w, /img/momentos/reinvent-1024.webp 1024w, /img/momentos/reinvent-1440.webp 1440w" sizes="(min-width: 1024px) 45vw, 100vw" width="1440" height="1440" loading="lazy" decoding="async" alt="Réplica del monumento a la Mitad del Mundo de AWS Community Day Ecuador frente a un hotel iluminado de Las Vegas durante AWS re:Invent">
@@ -753,6 +768,7 @@ home_body = f'''
       <p class="muted cl-intro">Busca el User Group o Student Builder Group más cercano a tu ciudad o universidad y únete a su Meetup.</p>
       <ul class="comm-list">{communities_html()}
       </ul>
+      <p style="margin-top:20px"><a class="link" href="/comunidades/">Ver comunidades por ciudad <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
     </div>
   </section>
 
@@ -764,12 +780,13 @@ home_body = f'''
       </div>
       <div class="faq">{faq_html}
       </div>
+      <p style="margin-top:24px"><a class="link" href="/preguntas-frecuentes/">Ver todas las preguntas frecuentes <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></p>
     </div>
   </section>
 '''
 preload = '\n<link rel="preload" as="image" type="image/avif" imagesrcset="/img/community-day-2024-640.avif 640w, /img/community-day-2024-828.avif 828w, /img/community-day-2024-1024.avif 1024w, /img/community-day-2024-1280.avif 1280w, /img/community-day-2024-1600.avif 1600w, /img/community-day-2024-2400.avif 2400w" imagesizes="100vw" fetchpriority="high">'
-open('index.html','w',encoding='utf-8').write(page('/', 'AWS User Group Ecuador, la primera comunidad AWS',
-  'AWS User Group Ecuador, fundada por Alexis Polo, es la primera comunidad de AWS del país: meetups, talleres, certificaciones y AWS Community Day.',
+open('index.html','w',encoding='utf-8').write(page('/', 'AWS Ecuador | AWS User Group Ecuador, comunidad AWS',
+  'AWS Ecuador: AWS User Group Ecuador, fundada por Alexis Polo, es la primera comunidad AWS y cloud del país. Meetups, certificación AWS y AWS Community Day.',
   home_ld, home_body, '/', preload))
 
 # ---------- shared ld ----------
@@ -865,7 +882,7 @@ ev_body = f'''
   </section>
 '''
 graph = [ORG, {"@type":"CollectionPage","@id":SITE+"/eventos/#webpage","url":SITE+"/eventos/","name":"Eventos de AWS en Ecuador","inLanguage":"es-EC","isPartOf":{"@id":SITE+"/#website"}}, crumbs("Eventos","/eventos/")] + ev_ld
-open('eventos/index.html','w',encoding='utf-8').write(page('/eventos/', 'Eventos de AWS en Ecuador: meetups y Community Day',
+open('eventos/index.html','w',encoding='utf-8').write(page('/eventos/', 'Eventos AWS Ecuador: meetups y AWS Community Day',
   'Eventos de AWS en Ecuador: meetups, talleres y AWS Community Day en Quito, Guayaquil y Cuenca, organizados por AWS User Group Ecuador.',
   dump(graph), ev_body, '/eventos/'))
 
@@ -949,10 +966,365 @@ nf_body = '''
 '''
 open('404.html','w',encoding='utf-8').write(page('/404', 'Página no encontrada | AWS User Group Ecuador', 'La página que buscas no existe.', dump([ORG]), nf_body, '', robots='noindex, follow', canonical=False))
 
+# ---------- páginas temáticas (SEO) ----------
+def moments_subset(cats, limit=None):
+    out = ''
+    items = [m for m in MOMENTS if m[1] in cats][:limit]
+    for pid, cat, alt, cap, w, h in items:
+        out += f'''
+          <figure class="moment"><img src="/img/momentos/{pid}-480.webp" srcset="/img/momentos/{pid}-480.webp 480w, /img/momentos/{pid}-1024.webp 1024w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{alt}"><figcaption>{cap}</figcaption></figure>'''
+    return out
+
+def webpage(kind, path, name, desc, extra=None):
+    o = {"@type": kind, "@id": SITE + path + "#webpage", "url": SITE + path, "name": name, "description": desc,
+         "inLanguage": "es-EC", "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": SITE + "/#organization"}}
+    if extra: o.update(extra)
+    return o
+
+# ===== /aws-community-day/ =====
+CD_EDITIONS = [
+  dict(ed="4.ª edición", year="2026", date="2026-09-05", label="5 de septiembre de 2026", place="Universidad Politécnica Salesiana (UPS)", city="Cuenca",
+       photo=("momentos/55516366381", 1024, 683, "Auditorio lleno en la apertura del AWS Community Day Ecuador 2026 en la UPS de Cuenca"),
+       text="La comunidad tecnológica se reunió en Cuenca con speakers nacionales e internacionales, comunidades AWS, estudiantes, profesionales y builders.",
+       links=[("Ver en Meetup","https://www.meetup.com/aws-ecuador/events/314902222/"),("Ver fotos","https://www.flickr.com/photos/203738323@N04/albums/72177720335540214")]),
+  dict(ed="3.ª edición", year="2025", date="2025-10-25", label="25 de octubre de 2025", place="Universidad de las Américas (UDLA)", city="Quito",
+       photo=("momentos/54882583284", 1024, 683, "Cientos de asistentes del AWS Community Day Ecuador 2025 en las escaleras de la UDLA en Quito"),
+       text="Un encuentro para compartir conocimiento, experiencias e innovación en la nube, con charlas, premios y una de las fotos grupales más grandes de la comunidad.",
+       links=[("Ver fotos","https://www.flickr.com/photos/203738323@N04/albums/72177720329913935")]),
+  dict(ed="2.ª edición", year="2024", date="2024-10-05", label="5 de octubre de 2024", place="Escuela Superior Politécnica del Litoral (ESPOL)", city="Guayaquil",
+       photo=("community-day-2024", 1024, 768, "Más de cien integrantes de AWS User Group Ecuador frente al letrero del AWS Community Day Ecuador 2024 en la ESPOL"),
+       text="La segunda edición llevó el AWS Community Day a Guayaquil, en el campus de la ESPOL, con charlas, talleres y networking.",
+       links=[]),
+]
+def edition_html(e):
+    src, w, h, alt = e['photo']
+    if src.startswith('momentos/'):
+        im = f'<img src="/img/{src}-1024.webp" srcset="/img/{src}-480.webp 480w, /img/{src}-1024.webp 1024w" sizes="(min-width: 1024px) 40vw, 100vw" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{alt}">'
+    else:
+        im = f'<img src="/img/{src}-1024.webp" srcset="/img/{src}-640.webp 640w, /img/{src}-1024.webp 1024w" sizes="(min-width: 1024px) 40vw, 100vw" width="2400" height="1800" loading="lazy" decoding="async" alt="{alt}">'
+    links = ''.join(f'<a class="btn btn-ghost btn-sm" href="{u}" rel="noopener" target="_blank">{t} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>' for t, u in e['links'])
+    return f'''
+        <article class="edition">
+          <figure>{im}</figure>
+          <div class="edition-body">
+            <p class="edition-meta"><span class="badge p">{e['ed']}</span><time datetime="{e['date']}">{e['label']}</time></p>
+            <h3>AWS Community Day Ecuador {e['year']}</h3>
+            <p class="edition-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{e['place']}, {e['city']}</p>
+            <p class="muted">{e['text']}</p>
+            {f'<div class="edition-links">{links}</div>' if links else ''}
+          </div>
+        </article>'''
+
+cd_body = f'''
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      {crumbs_html("AWS Community Day")}
+      <h1 id="page-title">AWS Community Day Ecuador<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="lede">El evento anual de la comunidad AWS Ecuador: una jornada completa de charlas técnicas, talleres y networking sobre Amazon Web Services y cloud, organizada por AWS User Group Ecuador. Cada edición viaja a una ciudad distinta.</p>
+      <dl class="stats" style="margin-top:32px">
+        <div><dt>ediciones</dt><dd>4</dd></div>
+        <div><dt>ciudades</dt><dd class="t">Guayaquil · Quito · Cuenca</dd></div>
+        <div><dt>última_edición</dt><dd class="t">5 sep 2026</dd></div>
+        <div><dt>fotos</dt><dd>+600</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ediciones-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">ediciones</span>
+        <h2 id="ediciones-title">De la ESPOL a Cuenca: así ha crecido el Community Day</h2>
+      </div>
+      <div class="editions">{''.join(edition_html(e) for e in CD_EDITIONS)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="que-es-title">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">qué es</span>
+        <h2 class="h2" id="que-es-title">¿Qué es un AWS Community Day?</h2>
+      </div>
+      <div class="body">
+        <p>Los AWS Community Days son conferencias técnicas organizadas por las comunidades de AWS en todo el mundo. Las charlas las dan builders, arquitectos, AWS Heroes, Community Builders y profesionales que usan Amazon Web Services a diario.</p>
+        <p>En Ecuador lo organiza AWS User Group Ecuador junto a universidades, sponsors y otras comunidades del país. Es el mejor lugar para aprender AWS y cloud en un día: arquitectura, serverless, inteligencia artificial generativa, seguridad, certificaciones y carrera profesional.</p>
+        <ul class="list">
+          <li><h3># charlas técnicas</h3><p>Casos reales construidos en AWS, presentados por la comunidad.</p></li>
+          <li><h3># talleres y networking</h3><p>Aprende haciendo y conoce a quienes trabajan con la nube en Ecuador.</p></li>
+          <li><h3># comunidad</h3><p>User Groups, Student Builder Groups, AWS Women Ecuador y voluntarios.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cd-fotos-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">fotos</span>
+        <h2 id="cd-fotos-title">Momentos del AWS Community Day Ecuador</h2>
+      </div>
+      <div class="moments expanded" style="margin-top:32px">{moments_subset({'community-day'}, 12)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cd-cta-title">
+    <div class="wrap">
+      <div class="cta-card" style="margin-top:0">
+        <div>
+          <span class="mono" style="display:block;margin-bottom:10px;font-size:.875rem">// próxima_edición</span>
+          <h2 class="h2" id="cd-cta-title" style="font-size:clamp(1.5rem,4.4vw,2.5rem)">Sé parte del próximo AWS Community Day Ecuador</h2>
+          <p style="font:400 1rem/1.55 var(--sans);letter-spacing:0;margin-top:14px;max-width:52ch">Patrocina, propone una charla o súmate como voluntario. La próxima edición se anuncia primero en Meetup.</p>
+        </div>
+        <a class="btn" href="mailto:hello@awsugecuador.com?subject=AWS%20Community%20Day%20Ecuador"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Quiero participar</a>
+      </div>
+    </div>
+  </section>
+'''
+cd_events = []
+for e in CD_EDITIONS:
+    cd_events.append({"@type": "Event", "name": f"AWS Community Day Ecuador {e['year']}", "startDate": e['date'],
+        "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {"@type": "Place", "name": e['place'], "address": {"@type": "PostalAddress", "addressLocality": e['city'], "addressCountry": "EC"}},
+        "image": SITE + "/img/" + (e['photo'][0] + "-1024.webp"), "description": e['text'],
+        "organizer": {"@id": SITE + "/#organization"}, "url": SITE + "/aws-community-day/"})
+CD_TITLE = 'AWS Community Day Ecuador | Ediciones, sedes y fotos'
+CD_DESC = 'AWS Community Day Ecuador: el evento anual de la comunidad AWS del país. Ediciones en ESPOL Guayaquil, UDLA Quito y UPS Cuenca. Fotos, sedes y cómo participar.'
+graph = [ORG, webpage("CollectionPage", "/aws-community-day/", CD_TITLE, CD_DESC), crumbs("AWS Community Day", "/aws-community-day/"),
+         {"@type": "EventSeries", "@id": SITE + "/aws-community-day/#serie", "name": "AWS Community Day Ecuador", "url": SITE + "/aws-community-day/",
+          "organizer": {"@id": SITE + "/#organization"}, "subEvent": cd_events}]
+open('aws-community-day/index.html', 'w', encoding='utf-8').write(page('/aws-community-day/', CD_TITLE, CD_DESC, dump(graph), cd_body, '/aws-community-day/'))
+
+# ===== /aws-reinvent/ =====
+REINVENT = [
+  ("reinvent-hero", 2048, 1536, "Alexis Polo, líder fundador de AWS User Group Ecuador, se toma una selfie con un AWS Hero en AWS re:Invent", "Con un AWS Hero", "wide"),
+  ("reinvent", 1440, 1440, "Réplica del monumento a la Mitad del Mundo de AWS Community Day Ecuador frente a un hotel de Las Vegas durante AWS re:Invent", "La Mitad del Mundo en Las Vegas", ""),
+  ("reinvent-4", 1080, 1350, "Integrante de AWS User Group Ecuador sonríe con la réplica del monumento de AWS Community Day Ecuador en AWS re:Invent", "Comunidad en re:Invent", ""),
+  ("reinvent-5", 1080, 1350, "Integrante de AWS User Group Ecuador posa con la réplica del monumento de AWS Community Day Ecuador en Las Vegas", "Comunidad en re:Invent", ""),
+  ("reinvent-2", 960, 1200, "Logo gigante de AWS iluminado en morado en el hall de AWS re:Invent en Las Vegas", "AWS re:Invent", ""),
+  ("reinvent-expo", 1536, 2048, "Expo hall de AWS re:Invent con el gran letrero de AWS iluminado y asistentes recorriendo los stands", "Expo hall", ""),
+  ("reinvent-3", 960, 1200, "Pantalla de AWS re:Invent en la zona de registro de badges, con asistentes haciendo fila", "Badge pickup", ""),
+  ("reinvent-6", 898, 672, "Letrero de entrada a AWS re:Invent con luces de colores en Las Vegas", "Entrada a re:Invent", "wide2"),
+]
+def reinvent_gallery():
+    out = ''
+    for n, w, h, alt, cap, cls in REINVENT:
+        big = '1440' if n == 'reinvent' else ('1024' if n in ('reinvent-hero', 'reinvent-expo') else '960')
+        out += f'''
+          <figure class="{cls}"><img src="/img/momentos/{n}-{big}.webp" srcset="/img/momentos/{n}-480.webp 480w, /img/momentos/{n}-{big}.webp {big}w" sizes="(min-width: 1024px) {'50vw' if cls else '25vw'}, (min-width: 768px) 50vw, 100vw" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{alt}"><figcaption>{cap}</figcaption></figure>'''
+    return out
+ri_body = f'''
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      {crumbs_html("AWS re:Invent")}
+      <h1 id="page-title">La comunidad AWS Ecuador en AWS re:Invent<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="lede">AWS re:Invent es la conferencia anual de Amazon Web Services en Las Vegas y el evento de cloud más grande del mundo. Hasta allá viaja la comunidad de AWS User Group Ecuador para aprender, conectar con AWS Heroes y Community Builders, y traer lo aprendido a Ecuador.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ri-galeria-title">
+    <div class="wrap">
+      <div class="section-head split-head">
+        <div>
+          <span class="eyebrow">las vegas</span>
+          <h2 id="ri-galeria-title">De la Mitad del Mundo a AWS re:Invent</h2>
+        </div>
+        <p>La réplica del monumento a la Mitad del Mundo del AWS Community Day Ecuador viajó a Las Vegas: un pedacito de Ecuador en la conferencia más importante de AWS.</p>
+      </div>
+      <div class="ri-gallery">{reinvent_gallery()}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ri-por-que-title">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">por qué importa</span>
+        <h2 class="h2" id="ri-por-que-title">Lo que la comunidad trae de re:Invent</h2>
+      </div>
+      <div class="body">
+        <p>En AWS re:Invent se anuncian los nuevos servicios de AWS, se comparten casos reales de clientes de todo el mundo y se encuentran las comunidades globales de AWS. Estar ahí permite traer de primera mano las novedades de Amazon Web Services a los meetups y al AWS Community Day Ecuador.</p>
+        <ul class="list">
+          <li><h3># novedades de AWS</h3><p>Lanzamientos y anuncios explicados después en los meetups de la comunidad.</p></li>
+          <li><h3># comunidad global</h3><p>Conexiones con AWS Heroes, Community Builders y User Groups de otros países.</p></li>
+          <li><h3># Ecuador en el mapa</h3><p>La comunidad AWS Ecuador presente en el evento cloud más grande del mundo.</p></li>
+        </ul>
+        <p style="margin-top:28px"><a class="btn btn-purple" href="https://www.meetup.com/aws-ecuador/" rel="noopener" target="_blank"><i class="fa-brands fa-meetup" aria-hidden="true"></i>Únete a la comunidad</a></p>
+      </div>
+    </div>
+  </section>
+'''
+RI_TITLE = 'AWS re:Invent: la comunidad AWS Ecuador en Las Vegas'
+RI_DESC = 'Fotos de la comunidad AWS User Group Ecuador en AWS re:Invent, Las Vegas: la Mitad del Mundo en la conferencia cloud más grande del mundo, junto a AWS Heroes.'
+graph = [ORG, webpage("WebPage", "/aws-reinvent/", RI_TITLE, RI_DESC, {"primaryImageOfPage": SITE + "/img/momentos/reinvent-1440.webp"}), crumbs("AWS re:Invent", "/aws-reinvent/"),
+         {"@type": "ImageGallery", "@id": SITE + "/aws-reinvent/#galeria", "name": "AWS User Group Ecuador en AWS re:Invent",
+          "image": [{"@type": "ImageObject", "contentUrl": SITE + f"/img/momentos/{n}-480.webp", "caption": alt} for n, w, h, alt, cap, cls in REINVENT]}]
+open('aws-reinvent/index.html', 'w', encoding='utf-8').write(page('/aws-reinvent/', RI_TITLE, RI_DESC, dump(graph), ri_body, '/aws-reinvent/'))
+
+# ===== /comunidades/ =====
+CITY_ORDER = [("Nacional", "En todo Ecuador"), ("Quito", "Quito"), ("Guayaquil", "Guayaquil"), ("Cuenca", "Cuenca"), ("Manta", "Manta")]
+def city_block(city, label):
+    items = [c for c in COMMUNITIES if c['city'] == city]
+    if city == 'Nacional':
+        items = [dict(n="AWS User Group Ecuador", t="User Group", sub="La primera comunidad AWS del Ecuador (Guayaquil y todo el país)", meetup="https://www.meetup.com/aws-ecuador/")] + items
+    lis = ''.join(f'''
+          <li><a href="{c['meetup']}" rel="noopener" target="_blank"><span class="cl-name">{c['n']}</span><span class="cl-meta">{c['t']} · {c['sub']}</span><i class="fa-brands fa-meetup" aria-hidden="true"></i><span class="sr-only">(Meetup)</span></a></li>''' for c in items)
+    return f'''
+      <section class="city-block" aria-labelledby="c-{city.lower()}">
+        <h2 class="h3-mono" id="c-{city.lower()}">// {label.lower()}</h2>
+        <ul class="comm-list">{lis}
+        </ul>
+      </section>'''
+co_body = f'''
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      {crumbs_html("Comunidades")}
+      <h1 id="page-title">Comunidades AWS en Ecuador<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="lede">Encuentra el AWS User Group o Student Builder Group más cercano a tu ciudad o universidad. Toda la comunidad AWS Ecuador en un solo lugar: Quito, Guayaquil, Cuenca, Manta y grupos nacionales.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Comunidades por ciudad">
+    <div class="wrap city-blocks">{''.join(city_block(c, l) for c, l in CITY_ORDER)}
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sbg-title">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">tipos de comunidad</span>
+        <h2 class="h2" id="sbg-title">User Groups y Student Builder Groups</h2>
+      </div>
+      <div class="body">
+        <p>Los <strong>AWS User Groups</strong> son comunidades abiertas a cualquier persona interesada en Amazon Web Services: profesionales, estudiantes y curiosos de la nube. Organizan meetups, talleres y eventos como el AWS Community Day.</p>
+        <p>Los <strong>AWS Student Builder Groups</strong> son comunidades universitarias lideradas por estudiantes, para aprender AWS y cloud desde la universidad.</p>
+        <p class="comms-note">¿Tu comunidad o universidad no aparece? <a href="mailto:hello@awsugecuador.com?subject=Agregar%20mi%20comunidad%20AWS">Escríbenos</a> y la sumamos.</p>
+      </div>
+    </div>
+  </section>
+'''
+CO_TITLE = 'Comunidades AWS en Ecuador: User Groups y Student Builders'
+CO_DESC = 'Comunidades AWS en Ecuador por ciudad: AWS User Group Ecuador, AWS User Group Quito, AWS Women Ecuador y Student Builder Groups de ESPOL, PUCE, UCuenca y más.'
+graph = [ORG, webpage("CollectionPage", "/comunidades/", CO_TITLE, CO_DESC), crumbs("Comunidades", "/comunidades/"), communities_ld()]
+open('comunidades/index.html', 'w', encoding='utf-8').write(page('/comunidades/', CO_TITLE, CO_DESC, dump(graph), co_body, '/comunidades/'))
+
+# ===== /aniversario/ =====
+HITOS = [
+  ("2022-02-10", "10 feb 2022", "Nace AWS User Group Ecuador", "La primera comunidad AWS del Ecuador empieza a reunir a quienes construyen en la nube."),
+  ("2024-10-05", "5 oct 2024", "AWS Community Day Ecuador en la ESPOL", "La 2.ª edición del Community Day reúne a la comunidad en Guayaquil."),
+  ("2025-10-25", "25 oct 2025", "AWS Community Day Ecuador en la UDLA", "La 3.ª edición llega a Quito con una de las fotos grupales más grandes."),
+  ("2026-02-07", "7 feb 2026", "AWS Security Day", "Más de 160 asistentes aprenden seguridad en la nube en la UPS."),
+  ("2026-03-21", "21 mar 2026", "Inspirando futuras líderes extraordinarias", "Encuentro de mujeres en tecnología con charlas y un workshop."),
+  ("2026-09-05", "5 sep 2026", "AWS Community Day Ecuador en Cuenca", "La 4.ª edición, con speakers nacionales e internacionales."),
+  ("2027-02-10", "10 feb 2027", "5 años de comunidad", "Celebramos 5 años con una gira de 5 eventos presenciales por ciudades como Guayaquil, Quito, Manta, Loja, Ambato y Machala."),
+]
+hitos_html = ''.join(f'''
+          <li class="hito{' next' if d.startswith('2027') else ''}"><time datetime="{d}">{l}</time><h3>{t}</h3><p>{x}</p></li>''' for d, l, t, x in HITOS)
+an_body = f'''
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      {crumbs_html("Aniversario")}
+      <h1 id="page-title">5 años de AWS User Group Ecuador<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="lede">El 10 de febrero de 2027 la primera comunidad AWS del Ecuador cumple 5 años, y lo celebraremos recorriendo el país: 5 eventos presenciales en ciudades como Guayaquil, Quito, Manta, Loja, Ambato y Machala.</p>
+    </div>
+  </section>
+
+  <section class="section anniversary" aria-label="Cuenta regresiva">
+    <div class="wrap">
+      <div class="aniv-card">
+        <div class="aniv-art">{pixel_five()}<span class="aniv-years mono">años</span></div>
+        <div class="aniv-body">
+          <p class="prompt" aria-hidden="true"><span class="kw">const</span> aniversario = <span class="str">"2027-02-10"</span></p>
+          <h2 class="h2">Faltan</h2>
+          <div class="countdown" role="timer" data-countdown="2027-02-10T00:00:00-05:00" aria-label="Cuenta regresiva para el aniversario">
+            <div><span data-u="d">--</span><small>días</small></div>
+            <div><span data-u="h">--</span><small>horas</small></div>
+            <div><span data-u="m">--</span><small>min</small></div>
+            <div><span data-u="s">--</span><small>seg</small></div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="{MEETUP}" rel="noopener" target="_blank"><i class="fa-brands fa-meetup" aria-hidden="true"></i>Avísame en Meetup</a>
+            <a class="btn btn-ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=5%20a%C3%B1os%20de%20AWS%20User%20Group%20Ecuador&amp;dates=20270210/20270211&amp;details=Celebramos%205%20a%C3%B1os%20de%20la%20comunidad%20de%20AWS%20en%20Ecuador.%20Detalles%20en%20https%3A%2F%2Fwww.awsugecuador.com%2Faniversario%2F" rel="noopener" target="_blank"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>Guardar la fecha</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="gira-title">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">gira de aniversario</span>
+        <h2 class="h2" id="gira-title">5 eventos presenciales por Ecuador</h2>
+      </div>
+      <div class="body">
+        <p>Para celebrar los 5 años llevaremos la comunidad AWS a distintas ciudades del país con 5 eventos presenciales: charlas de AWS y cloud, talleres prácticos y networking con la comunidad local.</p>
+        <div class="tags" style="margin-top:20px"><span class="tag"># guayaquil</span><span class="tag"># quito</span><span class="tag"># manta</span><span class="tag"># loja</span><span class="tag"># ambato</span><span class="tag"># machala</span></div>
+        <p style="margin-top:20px">Las fechas y sedes de cada ciudad se anunciarán en Meetup. ¿Quieres que la gira pase por tu universidad o empresa? <a href="mailto:hello@awsugecuador.com?subject=Gira%20de%20aniversario%205%20a%C3%B1os" style="color:var(--purple-2);font-weight:600">Escríbenos</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="trayectoria-title">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">trayectoria</span>
+        <h2 class="h2" id="trayectoria-title">5 años construyendo la comunidad AWS Ecuador</h2>
+      </div>
+      <div class="body">
+        <p>Lo que empezó el 10 de febrero de 2022 como un grupo de personas con ganas de aprender Amazon Web Services se convirtió en la primera comunidad AWS del Ecuador: más de 1.400 miembros en Meetup, cuatro ediciones del AWS Community Day y eventos en Guayaquil, Quito y Cuenca.</p>
+        <p>En estos años organizamos meetups presenciales y online, talleres, retos de certificación AWS, el AWS Security Day con más de 160 asistentes y encuentros de mujeres en tecnología. Llevamos la Mitad del Mundo hasta AWS re:Invent en Las Vegas y crecimos junto a otras comunidades del país: User Groups, AWS Women Ecuador y Student Builder Groups en universidades.</p>
+        <p>Detrás de todo esto hay voluntarios, speakers, sponsors y cada persona que llegó a su primer meetup. Estos 5 años son de toda la comunidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="historia-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">historia</span>
+        <h2 id="historia-title">Cinco años de comunidad AWS en Ecuador</h2>
+      </div>
+      <ol class="hitos">{hitos_html}
+      </ol>
+    </div>
+  </section>
+'''
+AN_TITLE = '5 años de AWS User Group Ecuador | 10 de febrero de 2027'
+AN_DESC = 'AWS User Group Ecuador, fundada por Alexis Polo, cumple 5 años el 10 de febrero de 2027 con 5 eventos presenciales en Guayaquil, Quito, Manta, Loja y más.'
+graph = [ORG, webpage("WebPage", "/aniversario/", AN_TITLE, AN_DESC), crumbs("Aniversario", "/aniversario/")]
+open('aniversario/index.html', 'w', encoding='utf-8').write(page('/aniversario/', AN_TITLE, AN_DESC, dump(graph), an_body, '/aniversario/'))
+
+# ===== /preguntas-frecuentes/ =====
+fq_body = f'''
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      {crumbs_html("Preguntas frecuentes")}
+      <h1 id="page-title">Preguntas frecuentes sobre AWS User Group Ecuador<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="lede">Todo lo que necesitas saber sobre la comunidad AWS Ecuador: quiénes somos, cómo unirte, dónde son los eventos y cómo aprender AWS y cloud con nosotros.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Preguntas y respuestas">
+    <div class="wrap">
+      <div class="faq" style="margin-top:0">{faq_items(FAQ)}
+      </div>
+    </div>
+  </section>
+'''
+FQ_TITLE = 'Preguntas frecuentes | AWS User Group Ecuador'
+FQ_DESC = 'Qué es AWS User Group Ecuador, quién la fundó, cómo unirte, dónde son los eventos de AWS en Ecuador y cómo prepararte para tu certificación AWS.'
+graph = [ORG, webpage("FAQPage", "/preguntas-frecuentes/", FQ_TITLE, FQ_DESC, {"mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a, _ in FAQ]}),
+         crumbs("Preguntas frecuentes", "/preguntas-frecuentes/")]
+open('preguntas-frecuentes/index.html', 'w', encoding='utf-8').write(page('/preguntas-frecuentes/', FQ_TITLE, FQ_DESC, dump(graph), fq_body, '/preguntas-frecuentes/'))
+
+
 # ---------- Font Awesome (auto-hospedado y recortado) ----------
 # Detecta los íconos usados en las páginas, recorta las fuentes de Font Awesome Free
 # a solo esos glifos (requiere: pip install fonttools brotli) e incrusta su CSS mínimo.
-PAGES = ['index.html', 'eventos/index.html', 'equipo/index.html', '404.html']
+PAGES = ['index.html', 'eventos/index.html', 'equipo/index.html', 'aws-community-day/index.html', 'aws-reinvent/index.html', 'comunidades/index.html', 'aniversario/index.html', 'preguntas-frecuentes/index.html', '404.html']
 FA_DIR = 'tools/fontawesome'
 html = {f: open(f, encoding='utf-8').read() for f in PAGES}
 used = sorted(set(re.findall(r'\bfa-(solid|brands) fa-([a-z0-9-]+)', ' '.join(html.values()))))
