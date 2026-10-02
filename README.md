@@ -25,7 +25,14 @@ No edites los `.html` a mano: se sobrescriben en el siguiente build.
 
 Rendimiento: el CSS se incrusta minificado en cada página (sin solicitudes que bloqueen el render), la foto principal se sirve en AVIF con respaldo WebP y el logo en WebP con varios tamaños.
 
-Para publicar, sube solo los archivos públicos (`index.html`, `404.html`, `eventos/`, `equipo/`, `css/`, `js/`, `img/`, `fonts/`, `favicon.ico`, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `_redirects`, `_headers`), sin `originales-wordpress/`, `build.py` ni `README.md`.
+## Publicación (AWS Amplify)
+
+El sitio está en AWS Amplify (app `web-awsugecuador`, `d23xfpobpak6hp`, us-east-1), conectado a la rama `main`: **cada `git push` publica en producción**.
+
+- `amplify.yml`: copia solo los archivos públicos a `dist/` (no se publican `build.py`, `tools/`, `originales-wordpress/`, `css/` ni este README).
+- `customHttp.yml`: cabeceras de seguridad y caché (fuentes 1 año, imágenes 30 días).
+- `amplify-rules.json`: redirecciones (sin www → www, URLs antiguas de WordPress → páginas nuevas) y página 404. Son configuración de la app, no se aplican con el push: `aws amplify update-app --app-id d23xfpobpak6hp --region us-east-1 --custom-rules file://amplify-rules.json`
+- Google Tag Manager: `GTM-M5F6GRM`, en todas las páginas (desde `build.py`).
 
 ## Estructura
 
@@ -39,8 +46,9 @@ js/main.js            Menú móvil, header, revelado de imágenes
 fonts/                Geist + Geist Mono (alojadas localmente, woff2)
 img/                  Imágenes WebP en varios tamaños, favicons, imagen OG 1200×630
 robots.txt, sitemap.xml, site.webmanifest, favicon.ico
-_redirects            301 desde las URLs viejas de WordPress (Cloudflare Pages / Netlify)
-_headers              Cabeceras de seguridad y caché (Cloudflare Pages / Netlify)
+amplify.yml           Build de Amplify (qué archivos se publican)
+customHttp.yml        Cabeceras HTTP de Amplify
+amplify-rules.json    Redirecciones 301 y 404 de Amplify
 originales-wordpress/ Fotos originales en alta resolución (fuente de las versiones WebP). NO publicar.
 build.py              Generador de las páginas HTML
 tools/fontawesome/    Fuentes completas de Font Awesome Free (fuente para el recorte). NO publicar.

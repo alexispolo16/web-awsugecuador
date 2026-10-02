@@ -268,6 +268,13 @@ def _page(path, title, desc, ld, body, current, extra_head='', robots='index, fo
 <html lang="es-EC">
 <head>
 <meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
+new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+}})(window,document,'script','dataLayer','GTM-M5F6GRM');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
@@ -295,6 +302,7 @@ def _page(path, title, desc, ld, body, current, extra_head='', robots='index, fo
 <link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preload" href="/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/fa-brands.woff2" as="font" type="font/woff2" crossorigin>
@@ -305,6 +313,9 @@ def _page(path, title, desc, ld, body, current, extra_head='', robots='index, fo
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5F6GRM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
 {header(current)}
@@ -440,7 +451,7 @@ def moments_html():
 def albums_html():
     return ''.join(f'''
         <li class="album"><a href="{u}" rel="noopener" target="_blank">
-          <img src="/img/momentos/{c}-480.webp" width="480" height="320" loading="lazy" decoding="async" alt="">
+          <img src="/img/momentos/{c}-480.webp" width="480" height="320" loading="lazy" decoding="async" alt="Portada del álbum de fotos {t}">
           <span class="a-body"><span class="a-count">{n}</span><strong>{t}</strong><span class="a-meta">{m}</span></span>
         </a></li>''' for t,m,n,u,c in ALBUMS)
 
@@ -529,7 +540,7 @@ for n in ld['@graph']:
         n['member'] = [{"@id": SITE + "/equipo/#alexis-polo"}, {"@id": SITE + "/equipo/#vanessa-barreiro"}, {"@id": SITE + "/equipo/#paul-rizo"}]
         n['knowsAbout'] += ["AWS Community Day", "Serverless", "Seguridad en la nube", "DevOps"]
     if n['@type'] == 'WebPage': n['primaryImageOfPage'] = SITE + '/img/community-day-2024-1600.webp'
-    if n['@type'] == 'WebPage': n['name'] = 'AWS User Group Ecuador | Comunidad de AWS en Ecuador'
+    if n['@type'] == 'WebPage': n['name'] = 'AWS User Group Ecuador, la primera comunidad AWS'
     if n['@type'] == 'FAQPage': n['mainEntity'] = [{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a,_ in FAQ]
 ld['@graph'].append(communities_ld())
 home_ld = json.dumps(ld, ensure_ascii=False, indent=2)
@@ -759,8 +770,8 @@ home_body = f'''
   </section>
 '''
 preload = '\n<link rel="preload" as="image" type="image/avif" imagesrcset="/img/community-day-2024-640.avif 640w, /img/community-day-2024-828.avif 828w, /img/community-day-2024-1024.avif 1024w, /img/community-day-2024-1280.avif 1280w, /img/community-day-2024-1600.avif 1600w, /img/community-day-2024-2400.avif 2400w" imagesizes="100vw" fetchpriority="high">'
-open('index.html','w',encoding='utf-8').write(page('/', 'AWS User Group Ecuador | Primera comunidad de AWS en Ecuador',
-  'La primera comunidad de AWS en Ecuador, fundada por Alexis Polo. Meetups, talleres, certificaciones AWS y el AWS Community Day en Quito, Guayaquil y Cuenca.',
+open('index.html','w',encoding='utf-8').write(page('/', 'AWS User Group Ecuador, la primera comunidad AWS',
+  'AWS User Group Ecuador, fundada por Alexis Polo, es la primera comunidad de AWS del país: meetups, talleres, certificaciones y AWS Community Day.',
   home_ld, home_body, '/', preload))
 
 # ---------- shared ld ----------

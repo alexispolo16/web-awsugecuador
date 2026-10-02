@@ -1,0 +1,212 @@
+[
+  {
+    "source": "https://awsugecuador.com/<*>",
+    "target": "https://www.awsugecuador.com/<*>",
+    "status": "301"
+  },
+  {
+    "source": "/teams",
+    "target": "/equipo/",
+    "status": "301"
+  },
+  {
+    "source": "/teams/",
+    "target": "/equipo/",
+    "status": "301"
+  },
+  {
+    "source": "/blog",
+    "target": "/eventos/",
+    "status": "301"
+  },
+  {
+    "source": "/blog/",
+    "target": "/eventos/",
+    "status": "301"
+  },
+  {
+    "source": "/2025/03/24/awsome-woman",
+    "target": "/eventos/",
+    "status": "301"
+  },
+  {
+    "source": "/2025/03/24/awsome-woman/",
+    "target": "/eventos/",
+    "status": "301"
+  },
+  {
+    "source": "/2025/06/17/elementor-545",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/2025/06/17/elementor-545/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/sample-page",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/sample-page/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/thanks",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/thanks/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/conversion",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/conversion/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/lead",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/lead/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/purchase",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/purchase/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/politica",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/politica/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/elementor-771",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/elementor-771/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/elementor-766",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/elementor-766/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/prueba",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/prueba/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/feed",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/feed/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/comments/feed",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/comments/feed/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/sitemap_index.xml",
+    "target": "/sitemap.xml",
+    "status": "301"
+  },
+  {
+    "source": "/page-sitemap.xml",
+    "target": "/sitemap.xml",
+    "status": "301"
+  },
+  {
+    "source": "/post-sitemap.xml",
+    "target": "/sitemap.xml",
+    "status": "301"
+  },
+  {
+    "source": "/wp-admin/<*>",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/wp-content/<*>",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/wp-includes/<*>",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/category/<*>",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/author/<*>",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/wp-login.php",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/xmlrpc.php",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/<*>",
+    "target": "/404.html",
+    "status": "404"
+  }
+]
