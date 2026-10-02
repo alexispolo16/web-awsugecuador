@@ -2,10 +2,6 @@
   var d = document, root = d.documentElement;
   root.classList.add('js');
 
-  var header = d.querySelector('.site-header');
-  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
 
   var toggle = d.querySelector('.nav-toggle'), nav = d.getElementById('site-nav');
   if (toggle && nav) {

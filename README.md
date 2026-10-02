@@ -21,6 +21,10 @@ Las páginas HTML se generan con `build.py` (textos, eventos, equipo, fotos, com
 
 No edites los `.html` a mano: se sobrescriben en el siguiente build.
 
+Íconos: el sitio usa **Font Awesome Free 6.7.2 auto-hospedado**. Usa las clases normales (`<i class="fa-brands fa-meetup" aria-hidden="true"></i>`); al ejecutar `build.py` se detectan los íconos usados y se recortan las fuentes de `tools/fontawesome/` a solo esos glifos (`fonts/fa-solid-<hash>.woff2`, `fonts/fa-brands-<hash>.woff2`, ~3 KB en total) con `font-display: swap`. Para recortar íconos nuevos hace falta `pip install fonttools brotli` (en un entorno virtual); sin eso el build usa las fuentes ya generadas.
+
+Rendimiento: el CSS se incrusta minificado en cada página (sin solicitudes que bloqueen el render), la foto principal se sirve en AVIF con respaldo WebP y el logo en WebP con varios tamaños.
+
 Para publicar, sube solo los archivos públicos (`index.html`, `404.html`, `eventos/`, `equipo/`, `css/`, `js/`, `img/`, `fonts/`, `favicon.ico`, `robots.txt`, `sitemap.xml`, `site.webmanifest`, `_redirects`, `_headers`), sin `originales-wordpress/`, `build.py` ni `README.md`.
 
 ## Estructura
@@ -39,6 +43,7 @@ _redirects            301 desde las URLs viejas de WordPress (Cloudflare Pages /
 _headers              Cabeceras de seguridad y caché (Cloudflare Pages / Netlify)
 originales-wordpress/ Fotos originales en alta resolución (fuente de las versiones WebP). NO publicar.
 build.py              Generador de las páginas HTML
+tools/fontawesome/    Fuentes completas de Font Awesome Free (fuente para el recorte). NO publicar.
 ```
 
 ## SEO incluido
@@ -81,4 +86,4 @@ build.py              Generador de las páginas HTML
 
 ## Créditos
 
-Iconos: Font Awesome Free 6.7 (CC BY 4.0). Fuentes: Geist y Geist Mono (SIL Open Font License).
+Iconos: Font Awesome Free 6.7.2 (íconos CC BY 4.0, fuentes SIL OFL 1.1). Fuentes: Geist y Geist Mono (SIL Open Font License).

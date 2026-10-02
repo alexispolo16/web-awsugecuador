@@ -2,7 +2,7 @@
 
 Uso: python3 build.py
 """
-import re, json, os
+import re, json, os, glob, hashlib
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://www.awsugecuador.com'
 home_ld = r'''{
@@ -167,10 +167,14 @@ MARK = '''<svg width="0" height="0" style="position:absolute" aria-hidden="true"
   </symbol>
 </svg>'''
 
-FA = '''<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">'''
+FA = ''
+
+def _min_css(css):
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
+    css = re.sub(r'\s+', ' ', css)
+    css = re.sub(r'\s*([{};:,>])\s*', r'\1', css)
+    return css.replace(';}', '}').replace('url(../', 'url(/').strip()
+CSS = _min_css(open('css/styles.css', encoding='utf-8').read())
 
 MEETUP = 'https://www.meetup.com/aws-ecuador/'
 
@@ -181,7 +185,7 @@ def header(current):
 <header class="site-header">
   <div class="wrap header-row">
     <a class="brand" href="/" aria-label="AWS User Group Ecuador, inicio">
-      <img src="/img/logo-awsugecuador-320.png" srcset="/img/logo-awsugecuador-320.png 1x, /img/logo-awsugecuador-640.png 2x" width="157" height="50" alt="AWS User Group Ecuador">
+      <img src="/img/logo-awsugecuador-320.webp" srcset="/img/logo-awsugecuador-160.webp 160w, /img/logo-awsugecuador-240.webp 240w, /img/logo-awsugecuador-320.webp 320w, /img/logo-awsugecuador-480.webp 480w" sizes="(min-width: 1024px) 157px, 138px" width="157" height="50" alt="AWS User Group Ecuador">
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="label">Menú</span><span class="bars" aria-hidden="true"></span></button>
     <nav class="site-nav" id="site-nav" aria-label="Principal">
@@ -207,7 +211,7 @@ FOOTER = f'''<footer class="site-footer" id="unete">
 
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" aria-label="AWS User Group Ecuador, inicio"><img src="/img/logo-awsugecuador-320.png" srcset="/img/logo-awsugecuador-320.png 1x, /img/logo-awsugecuador-640.png 2x" width="213" height="68" loading="lazy" alt="AWS User Group Ecuador"></a>
+        <a href="/" aria-label="AWS User Group Ecuador, inicio"><img src="/img/logo-awsugecuador-480.webp" srcset="/img/logo-awsugecuador-240.webp 240w, /img/logo-awsugecuador-320.webp 320w, /img/logo-awsugecuador-480.webp 480w, /img/logo-awsugecuador-640.webp 640w" sizes="213px" width="213" height="68" loading="lazy" decoding="async" alt="AWS User Group Ecuador"></a>
         <p>Comunidad de usuarios de Amazon Web Services en Ecuador. La primera comunidad de AWS del Ecuador. Meetups, talleres y AWS Community Day en Quito, Guayaquil, Cuenca y online.</p>
         <ul class="social" aria-label="Redes sociales">
           <li><a class="icon-btn" href="https://www.linkedin.com/company/awsecuador" rel="noopener" target="_blank" aria-label="LinkedIn de AWS User Group Ecuador"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
@@ -256,7 +260,7 @@ FOOTER = f'''<footer class="site-footer" id="unete">
   </div>
 </footer>'''
 
-def page(path, title, desc, ld, body, current, extra_head='', robots='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1', canonical=True):
+def _page(path, title, desc, ld, body, current, extra_head='', robots='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1', canonical=True):
     url = SITE + path
     can = f'<link rel="canonical" href="{url}">\n<link rel="alternate" hreflang="es-EC" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{url}">\n' if canonical else ''
     gsv = '<meta name="google-site-verification" content="0D5puLMknlgB2XljSiQkHi3rrwnQsV2sdyIEpAfnCNg">\n' if path == '/' else ''
@@ -292,9 +296,10 @@ def page(path, title, desc, ld, body, current, extra_head='', robots='index, fol
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>{extra_head}
-<link rel="stylesheet" href="/css/styles.css">
-{FA}
+<link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-brands.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid.woff2" as="font" type="font/woff2" crossorigin>{extra_head}
+<style>{CSS}/*FA*/</style>
 <script type="application/ld+json">
 {ld}
 </script>
@@ -320,6 +325,9 @@ def img(name, widths, w, h, alt, sizes, lazy=True, cls=''):
     mid = widths[1] if len(widths) > 1 else widths[0]
     load = 'loading="lazy" decoding="async"' if lazy else 'fetchpriority="high" decoding="async"'
     return f'<img src="/img/{name}-{mid}.webp" srcset="{srcset}" sizes="{sizes}" width="{w}" height="{h}" {load} alt="{alt}"{cls}>'
+
+def page(*a, **k):
+    return _page(*a, **k)
 
 # ---------- data ----------
 EVENTS = [
@@ -556,7 +564,7 @@ home_body = f'''
 
     <div class="photo-band">
       <figure>
-        {img("community-day-2024", [640,1024,1600,2400], 2400, 1800, "Más de cien integrantes de AWS User Group Ecuador posan frente al letrero del AWS Community Day Ecuador 2024 en la ESPOL, Guayaquil", "100vw", lazy=False)}
+        <picture><source type="image/avif" srcset="/img/community-day-2024-640.avif 640w, /img/community-day-2024-828.avif 828w, /img/community-day-2024-1024.avif 1024w, /img/community-day-2024-1280.avif 1280w, /img/community-day-2024-1600.avif 1600w, /img/community-day-2024-2400.avif 2400w" sizes="100vw"><img src="/img/community-day-2024-1024.webp" srcset="/img/community-day-2024-640.webp 640w, /img/community-day-2024-828.webp 828w, /img/community-day-2024-1024.webp 1024w, /img/community-day-2024-1280.webp 1280w, /img/community-day-2024-1600.webp 1600w, /img/community-day-2024-2400.webp 2400w" sizes="100vw" width="2400" height="1800" fetchpriority="high" decoding="async" alt="Más de cien integrantes de AWS User Group Ecuador posan frente al letrero del AWS Community Day Ecuador 2024 en la ESPOL, Guayaquil"></picture>
         <figcaption><b>●</b> AWS Community Day Ecuador 2024 · ESPOL, Guayaquil · 5 de octubre de 2024</figcaption>
       </figure>
     </div>
@@ -750,7 +758,7 @@ home_body = f'''
     </div>
   </section>
 '''
-preload = '\n<link rel="preload" as="image" href="/img/community-day-2024-1024.webp" imagesrcset="/img/community-day-2024-640.webp 640w, /img/community-day-2024-1024.webp 1024w, /img/community-day-2024-1600.webp 1600w, /img/community-day-2024-2400.webp 2400w" imagesizes="100vw">'
+preload = '\n<link rel="preload" as="image" type="image/avif" imagesrcset="/img/community-day-2024-640.avif 640w, /img/community-day-2024-828.avif 828w, /img/community-day-2024-1024.avif 1024w, /img/community-day-2024-1280.avif 1280w, /img/community-day-2024-1600.avif 1600w, /img/community-day-2024-2400.avif 2400w" imagesizes="100vw" fetchpriority="high">'
 open('index.html','w',encoding='utf-8').write(page('/', 'AWS User Group Ecuador | Primera comunidad de AWS en Ecuador',
   'La primera comunidad de AWS en Ecuador, fundada por Alexis Polo. Meetups, talleres, certificaciones AWS y el AWS Community Day en Quito, Guayaquil y Cuenca.',
   home_ld, home_body, '/', preload))
@@ -931,4 +939,52 @@ nf_body = '''
   </section>
 '''
 open('404.html','w',encoding='utf-8').write(page('/404', 'Página no encontrada | AWS User Group Ecuador', 'La página que buscas no existe.', dump([ORG]), nf_body, '', robots='noindex, follow', canonical=False))
-print('ok')
+
+# ---------- Font Awesome (auto-hospedado y recortado) ----------
+# Detecta los íconos usados en las páginas, recorta las fuentes de Font Awesome Free
+# a solo esos glifos (requiere: pip install fonttools brotli) e incrusta su CSS mínimo.
+PAGES = ['index.html', 'eventos/index.html', 'equipo/index.html', '404.html']
+FA_DIR = 'tools/fontawesome'
+html = {f: open(f, encoding='utf-8').read() for f in PAGES}
+used = sorted(set(re.findall(r'\bfa-(solid|brands) fa-([a-z0-9-]+)', ' '.join(html.values()))))
+fa_src = open(f'{FA_DIR}/all.css', encoding='utf-8').read()
+codes = {}
+for kind, name in used:
+    m = re.search(r'\.fa-' + re.escape(name) + r' \{\s*--fa: "\\([0-9a-f]+)"', fa_src)
+    if not m:
+        raise SystemExit(f'Ícono no encontrado en Font Awesome Free: fa-{name}')
+    codes[(kind, name)] = m.group(1)
+
+try:
+    from fontTools import subset as ft_subset
+    for kind, src in (('solid', 'fa-solid-900.woff2'), ('brands', 'fa-brands-400.woff2')):
+        cps = [int(c, 16) for (k, _), c in codes.items() if k == kind]
+        opts = ft_subset.Options(); opts.flavor = 'woff2'; opts.layout_features = []; opts.name_IDs = ['*']; opts.notdef_outline = False
+        font = ft_subset.load_font(f'{FA_DIR}/{src}', opts)
+        sub = ft_subset.Subsetter(opts); sub.populate(unicodes=cps); sub.subset(font)
+        tmp = f'fonts/fa-{kind}.tmp.woff2'
+        ft_subset.save_font(font, tmp, opts)
+        digest = hashlib.sha1(open(tmp, 'rb').read()).hexdigest()[:8]
+        for old in glob.glob(f'fonts/fa-{kind}-*.woff2'):
+            os.remove(old)
+        os.replace(tmp, f'fonts/fa-{kind}-{digest}.woff2')
+except ImportError:
+    print('Aviso: fonttools no está instalado; se usan las fuentes recortadas existentes en fonts/. Si agregaste íconos nuevos: pip install fonttools brotli')
+
+# nombres con huella de contenido (permiten caché de 1 año sin servir versiones viejas)
+FA_FILES = {k: '/' + sorted(glob.glob(f'fonts/fa-{k}-*.woff2'))[-1] for k in ('solid', 'brands')}
+
+fa_css = (
+    '@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url(' + FA_FILES['solid'] + ') format("woff2")}'
+    '@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:swap;src:url(' + FA_FILES['brands'] + ') format("woff2")}'
+    '.fa-solid,.fa-brands{display:inline-block;min-width:1em;text-align:center;line-height:1;font-style:normal;font-variant:normal;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}'
+    '.fa-solid{font-family:"Font Awesome 6 Free";font-weight:900}'
+    '.fa-brands{font-family:"Font Awesome 6 Brands";font-weight:400}'
+    '.fa-solid::before,.fa-brands::before{content:var(--fa)}'
+    + ''.join(f'.fa-{n}{{--fa:"\\{c}"}}' for (k, n), c in sorted(codes.items(), key=lambda x: x[0][1]))
+)
+for f, h in html.items():
+    h = h.replace('/*FA*/', fa_css).replace('/fonts/fa-solid.woff2', FA_FILES['solid']).replace('/fonts/fa-brands.woff2', FA_FILES['brands'])
+    open(f, 'w', encoding='utf-8').write(h)
+print(f'ok · {len(codes)} íconos de Font Awesome')
+
