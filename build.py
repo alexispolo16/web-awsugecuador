@@ -175,6 +175,7 @@ def _min_css(css):
     css = re.sub(r'\s*([{};:,>])\s*', r'\1', css)
     return css.replace(';}', '}').replace('url(../', 'url(/').strip()
 CSS = _min_css(open('css/styles.css', encoding='utf-8').read())
+JS = open('js/main.js', encoding='utf-8').read().strip()
 
 MEETUP = 'https://www.meetup.com/aws-ecuador/'
 
@@ -269,12 +270,8 @@ def _page(path, title, desc, ld, body, current, extra_head='', robots='index, fo
 <head>
 <meta charset="utf-8">
 <script>if(location.hostname==='awsugecuador.com')location.replace('https://www.awsugecuador.com'+location.pathname+location.search+location.hash)</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
-new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-}})(window,document,'script','dataLayer','GTM-M5F6GRM');</script>
+<!-- Google Tag Manager (GTM-M5F6GRM), carga diferida: primera interacción o 4 s después de cargar -->
+<script>window.dataLayer=window.dataLayer||[];(function(w,d){{var ev=['scroll','pointerdown','keydown','touchstart'],done=false;function load(){{if(done)return;done=true;ev.forEach(function(e){{w.removeEventListener(e,load)}});w.dataLayer.push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var j=d.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-M5F6GRM';d.head.appendChild(j)}}ev.forEach(function(e){{w.addEventListener(e,load,{{passive:true}})}});w.addEventListener('load',function(){{setTimeout(load,4000)}})}})(window,document);</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
@@ -303,7 +300,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preload" href="/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/fa-brands.woff2" as="font" type="font/woff2" crossorigin>
@@ -327,7 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {FOOTER}
 
-<script src="/js/main.js" defer></script>
+<script>{JS}</script>
 </body>
 </html>
 '''

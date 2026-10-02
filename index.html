@@ -3,12 +3,8 @@
 <head>
 <meta charset="utf-8">
 <script>if(location.hostname==='awsugecuador.com')location.replace('https://www.awsugecuador.com'+location.pathname+location.search+location.hash)</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M5F6GRM');</script>
+<!-- Google Tag Manager (GTM-M5F6GRM), carga diferida: primera interacción o 4 s después de cargar -->
+<script>window.dataLayer=window.dataLayer||[];(function(w,d){var ev=['scroll','pointerdown','keydown','touchstart'],done=false;function load(){if(done)return;done=true;ev.forEach(function(e){w.removeEventListener(e,load)});w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});var j=d.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-M5F6GRM';d.head.appendChild(j)}ev.forEach(function(e){w.addEventListener(e,load,{passive:true})});w.addEventListener('load',function(){setTimeout(load,4000)})})(window,document);</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AWS User Group Ecuador, la primera comunidad AWS</title>
@@ -41,7 +37,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preload" href="/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/fa-brands-a2ce9d39.woff2" as="font" type="font/woff2" crossorigin>
@@ -819,6 +814,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </footer>
 
-<script src="/js/main.js" defer></script>
+<script>(function () {
+  var d = document, root = d.documentElement;
+  root.classList.add('js');
+
+
+  var toggle = d.querySelector('.nav-toggle'), nav = d.getElementById('site-nav');
+  if (toggle && nav) {
+    var setOpen = function (open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.querySelector('.label').textContent = open ? 'Cerrar' : 'Menú';
+      nav.classList.toggle('open', open);
+      d.body.style.overflow = open ? 'hidden' : '';
+    };
+    toggle.addEventListener('click', function () { setOpen(toggle.getAttribute('aria-expanded') !== 'true'); });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); toggle.focus(); } });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', function (m) { if (m.matches) setOpen(false); });
+  }
+
+  var reveals = d.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  d.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+})();
+
+(function () {
+  var d = document;
+
+  var cd = d.querySelector('[data-countdown]');
+  if (cd) {
+    var target = new Date(cd.getAttribute('data-countdown')).getTime();
+    var u = {}; ['d', 'h', 'm', 's'].forEach(function (k) { u[k] = cd.querySelector('[data-u="' + k + '"]'); });
+    var pad = function (n) { return n < 10 ? '0' + n : String(n); };
+    var tick = function () {
+      var t = Math.max(0, target - Date.now());
+      u.d.textContent = Math.floor(t / 864e5);
+      u.h.textContent = pad(Math.floor(t / 36e5) % 24);
+      u.m.textContent = pad(Math.floor(t / 6e4) % 60);
+      u.s.textContent = pad(Math.floor(t / 1e3) % 60);
+    };
+    tick(); setInterval(tick, 1000);
+  }
+
+  var grid = d.getElementById('moments-grid'), more = d.querySelector('.more');
+  var expand = function () { if (grid) grid.classList.add('expanded'); if (more) { more.setAttribute('aria-expanded', 'true'); more.hidden = true; } };
+  if (more) more.addEventListener('click', expand);
+
+  var chips = d.querySelectorAll('.chip[data-filter]');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var f = chip.getAttribute('data-filter');
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      d.querySelectorAll('.moment').forEach(function (m) { m.hidden = f !== 'all' && m.getAttribute('data-cat') !== f; });
+      if (f !== 'all') expand();
+    });
+  });
+})();</script>
 </body>
 </html>

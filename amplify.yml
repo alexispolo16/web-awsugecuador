@@ -5,7 +5,7 @@ frontend:
       commands:
         # Publica solo los archivos públicos (las páginas ya vienen generadas por build.py)
         - mkdir -p dist
-        - cp -R index.html 404.html eventos equipo js img fonts favicon.ico robots.txt sitemap.xml site.webmanifest dist/
+        - cp -R index.html 404.html eventos equipo img fonts favicon.ico robots.txt sitemap.xml site.webmanifest dist/
   artifacts:
     baseDirectory: dist
     files:
