@@ -32,6 +32,7 @@ El sitio está en AWS Amplify (app `web-awsugecuador`, `d23xfpobpak6hp`, us-east
 - `amplify.yml`: copia solo los archivos públicos a `dist/` (no se publican `build.py`, `tools/`, `originales-wordpress/`, `css/` ni este README).
 - `customHttp.yml`: cabeceras de seguridad y caché (fuentes 1 año, imágenes 30 días).
 - `amplify-rules.json`: redirecciones (sin www → www, URLs antiguas de WordPress → páginas nuevas) y página 404. Son configuración de la app, no se aplican con el push: `aws amplify update-app --app-id d23xfpobpak6hp --region us-east-1 --custom-rules file://amplify-rules.json`
+- SEO para IA: `robots.txt` permite explícitamente GPTBot, OAI-SearchBot, ClaudeBot, Google-Extended, PerplexityBot y Bingbot; `llms.txt` resume la comunidad para asistentes de IA (actualízalo cuando cambien datos clave).
 - Google Tag Manager: `GTM-M5F6GRM`, en todas las páginas (desde `build.py`).
 
 ## Estructura
@@ -80,7 +81,6 @@ tools/fontawesome/    Fuentes completas de Font Awesome Free (fuente para el rec
 - [ ] **Miembros en Meetup**: se muestra "+1.400" (Meetup indicaba 1.455 el 2 de octubre de 2026). Actualizar cuando cambie.
 - [ ] **Redes de Vanessa Barreiro**: el sitio anterior no tenía sus enlaces; agregar LinkedIn si lo desea.
 - [ ] **Sponsors**: GYE Tech, Ondú Cloud y Publifyer. ¿Siguen vigentes? ¿Se enlazan a sus sitios web?
-- [ ] **FAQ**: no se afirma que los eventos sean gratuitos. Si lo son, conviene agregar esa pregunta (ayuda en búsquedas).
 - [ ] **Instagram / TikTok / X de la comunidad**: no se encontraron cuentas oficiales; agregar si existen.
 - [ ] **Aniversario**: cuando haya lugar y hora, actualizar la sección y crear el evento en Meetup.
 - [ ] **Dominio**: el canonical usa `https://www.awsugecuador.com/`. Configurar la redirección del dominio sin www a www en el hosting.

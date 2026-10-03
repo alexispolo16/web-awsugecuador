@@ -371,6 +371,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .founder { margin-top: 56px; padding: 28px 22px; border: 1px solid var(--purple); border-radius: 8px; background: radial-gradient(120% 90% at 100% 0%, rgba(255,87,233,.14), transparent 60%), var(--bg-2); }
 .founder p { margin-top: 16px; max-width: 64ch; color: var(--text-2); font-size: 1.0625rem; }
 .founder .hero-actions { margin-top: 24px; }
+.founder-quote { margin: 24px 0 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--pink); font: 500 clamp(1.0625rem, 2.4vw, 1.25rem)/1.45 var(--mono); color: var(--text); max-width: 60ch; letter-spacing: -0.01em; }
 @media (min-width: 768px) { .founder { padding: 40px 48px; } }
 
 /* En acción (equipo) */

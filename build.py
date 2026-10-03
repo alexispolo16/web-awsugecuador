@@ -404,37 +404,28 @@ def team_items(home):
 
 MOMENTS = [
   ("54882583284","community-day","Cientos de asistentes del AWS Community Day Ecuador 2025 posan en las escaleras de la Universidad de las Américas en Quito","Community Day 2025",1024,683),
-  ("54890831244","community-day","Alexis Polo, líder fundador de AWS User Group Ecuador, habla con el público en el AWS Community Day Ecuador 2025","Community Day 2025",1024,683),
-  ("55516366381","community-day","Auditorio lleno durante la apertura del AWS Community Day Ecuador 2026 en Cuenca","Community Day 2026",1024,683),
-  ("55090151586","security","Alexis Polo, fundador de AWS User Group Ecuador, da la bienvenida desde el podio del AWS Security Day","Security Day",1024,1024),
-  ("reinvent-hero","reinvent","Alexis Polo, líder fundador de AWS User Group Ecuador, con un AWS Hero en AWS re:Invent","AWS re:Invent",1024,768),
-  ("reinvent-expo","reinvent","Expo hall de AWS re:Invent con el gran letrero de AWS iluminado","AWS re:Invent",1024,1365),
-  ("reinvent","reinvent","Réplica del monumento a la Mitad del Mundo de AWS Community Day Ecuador en Las Vegas durante AWS re:Invent","AWS re:Invent",1024,1024),
-  ("reinvent-4","reinvent","Integrante de AWS User Group Ecuador sonríe con la réplica del monumento de AWS Community Day Ecuador en AWS re:Invent","AWS re:Invent",960,1200),
-  ("reinvent-2","reinvent","Logo gigante de AWS iluminado en morado en el hall de AWS re:Invent en Las Vegas","AWS re:Invent",960,1200),
-  ("reinvent-5","reinvent","Integrante de AWS User Group Ecuador posa con la réplica del monumento de AWS Community Day Ecuador en Las Vegas","AWS re:Invent",960,1200),
-  ("reinvent-6","reinvent","Letrero de entrada a AWS re:Invent con luces de colores en Las Vegas","AWS re:Invent",898,672),
-  ("reinvent-3","reinvent","Pantalla de AWS re:Invent en la zona de registro de badges, con asistentes haciendo fila","AWS re:Invent",960,1200),
   ("55163781546","mujeres","Foto grupal de Inspirando futuras líderes extraordinarias, el encuentro de mujeres en tecnología","Mujeres en tecnología",1024,768),
-  ("54890810233","community-day","Alexis Polo entrega un premio a un asistente en el escenario del AWS Community Day Ecuador 2025","Community Day 2025",1024,683),
-  ("hackathon","otros","Alexis Polo, líder de AWS User Group Ecuador, habla con los participantes de un hackathon","Hackathon",1024,683),
+  ("reinvent","reinvent","Réplica del monumento a la Mitad del Mundo de AWS Community Day Ecuador en Las Vegas durante AWS re:Invent","AWS re:Invent",1024,1024),
   ("55089267957","security","Asistentes del AWS Security Day posan en el auditorio de la UPS","Security Day",1024,683),
-  ("54882580144","community-day","Alexis Polo, fundador de AWS User Group Ecuador, posa con un asistente en el AWS Community Day Ecuador 2025","Community Day 2025",1024,923),
-  ("55089267912","security","Alexis Polo junto a speakers en una selfie del AWS Security Day","Security Day",1024,768),
+  ("55516366381","community-day","Auditorio lleno durante la apertura del AWS Community Day Ecuador 2026 en Cuenca","Community Day 2026",1024,683),
+  ("reinvent-4","reinvent","Integrante de AWS User Group Ecuador sonríe con la réplica del monumento de AWS Community Day Ecuador en AWS re:Invent","AWS re:Invent",960,1200),
   ("55516701379","community-day","Un speaker da su charla en el AWS Community Day Ecuador 2026","Community Day 2026",682,1024),
-  ("cd-salto","community-day","Alexis Polo celebra con los asistentes frente al letrero de AWS Community Day Ecuador","Community Day",1024,576),
-  ("54882338156","community-day","Asistentes se toman una selfie en el auditorio del AWS Community Day Ecuador 2025","Community Day 2025",1024,683),
   ("55162884362","mujeres","Una speaker comparte su experiencia en el encuentro de mujeres en tecnología","Mujeres en tecnología",1023,682),
-  ("54882557068","community-day","Alexis Polo presenta a los speakers en el escenario del AWS Community Day Ecuador 2025","Community Day 2025",1024,740),
+  ("54882338156","community-day","Asistentes se toman una selfie en el auditorio del AWS Community Day Ecuador 2025","Community Day 2025",1024,683),
   ("55090417689","security","Foto grupal al aire libre de los asistentes del AWS Security Day","Security Day",1024,683),
   ("55516473143","community-day","El equipo de registro recibe a los participantes del AWS Community Day Ecuador 2026","Community Day 2026",1024,683),
-  ("55090514405","security","La mascota de AWS sobre el podio del AWS Security Day","Security Day",746,1024),
-  ("55162884322","mujeres","Speakers y organizadoras del encuentro de mujeres en tecnología","Mujeres en tecnología",1024,768),
+  ("reinvent-2","reinvent","Logo gigante de AWS iluminado en morado en el hall de AWS re:Invent en Las Vegas","AWS re:Invent",960,1200),
   ("54890877840","community-day","Vista del auditorio lleno durante una charla del AWS Community Day Ecuador 2025","Community Day 2025",1024,683),
+  ("55162884322","mujeres","Speakers y organizadoras del encuentro de mujeres en tecnología","Mujeres en tecnología",1024,768),
+  ("55090514405","security","La mascota de AWS sobre el podio del AWS Security Day","Security Day",746,1024),
+  ("reinvent-5","reinvent","Integrante de AWS User Group Ecuador posa con la réplica del monumento de AWS Community Day Ecuador en Las Vegas","AWS re:Invent",960,1200),
   ("55516648983","community-day","Un grupo de estudiantes posa en el photocall del AWS Community Day Ecuador 2026","Community Day 2026",1024,682),
   ("55090356113","security","Mesa de stickers y regalos para la comunidad en el AWS Security Day","Security Day",1024,682),
   ("54882579944","community-day","Un speaker presenta sobre agentes de IA en el AWS Community Day Ecuador 2025","Community Day 2025",1023,938),
+  ("reinvent-expo","reinvent","Expo hall de AWS re:Invent con el gran letrero de AWS iluminado","AWS re:Invent",1024,1365),
   ("55515418927","community-day","Tres asistentes posan en el photocall del AWS Community Day Ecuador 2026","Community Day 2026",1024,682),
+  ("reinvent-3","reinvent","Pantalla de AWS re:Invent en la zona de registro de badges, con asistentes haciendo fila","AWS re:Invent",960,1200),
+  ("reinvent-6","reinvent","Letrero de entrada a AWS re:Invent con luces de colores en Las Vegas","AWS re:Invent",898,672),
 ]
 ALBUMS = [
   ("AWS Community Day 2026","Cuenca · 4.ª edición","460 fotos","https://www.flickr.com/photos/203738323@N04/albums/72177720335540214","55516366381"),
@@ -506,6 +497,9 @@ FAQ = [
  ("¿Qué es AWS User Group Ecuador?", "Es la primera comunidad de usuarios de Amazon Web Services (AWS) en Ecuador. Reúne a desarrolladores, arquitectos, estudiantes y líderes de tecnología para aprender y compartir conocimiento sobre la nube de AWS en meetups, talleres y el AWS Community Day Ecuador. Es una comunidad independiente, organizada por voluntarios.", None),
  ("¿Quién fundó AWS User Group Ecuador?", "AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por Alexis Polo, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran y un equipo de voluntarios.",
   'AWS User Group Ecuador fue fundado el 10 de febrero de 2022 por <a href="/equipo/#alexis-polo">Alexis Polo</a>, su líder fundador. Hoy lo lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran y un equipo de voluntarios.'),
+ ("¿Quién es Alexis Polo?", "Alexis Polo es el fundador y líder de AWS User Group Ecuador, la primera comunidad de AWS del país, que creó el 10 de febrero de 2022. Es AWS Community Builder, tiene las certificaciones AWS Certified Cloud Practitioner y AWS Certified Developer – Associate, y ha dado más de 20 charlas y talleres sobre AWS, serverless y cloud.",
+  'Alexis Polo es el fundador y líder de AWS User Group Ecuador, la primera comunidad de AWS del país, que creó el 10 de febrero de 2022. Es AWS Community Builder, tiene las certificaciones AWS Certified Cloud Practitioner y AWS Certified Developer – Associate, y ha dado más de 20 charlas y talleres sobre AWS, serverless y cloud. <a href="/equipo/#fundador">Conoce su historia</a>.'),
+ ("¿Los meetups de AWS User Group Ecuador son gratuitos?", "Sí. Los meetups de AWS User Group Ecuador son gratuitos y abiertos a todas las personas interesadas en AWS y cloud, sin importar su nivel. Se publican en el grupo de Meetup de la comunidad.", None),
  ("¿Cuál es la primera comunidad de AWS en Ecuador?", "AWS User Group Ecuador es la primera comunidad de AWS del Ecuador. Desde 2022 organiza meetups, talleres, retos de certificación y el AWS Community Day Ecuador, y en febrero de 2027 cumple 5 años.", None),
  ("¿Existe una comunidad de AWS en Ecuador?", "Sí. AWS User Group Ecuador es la comunidad AWS Ecuador: la primera comunidad de Amazon Web Services del país, con meetups, talleres y el AWS Community Day en Quito, Guayaquil y Cuenca, además de sesiones online.", None),
  ("¿Dónde aprender AWS y cloud en Ecuador?", "En AWS User Group Ecuador aprendes AWS y cloud con la comunidad: meetups para empezar, talleres prácticos, retos para preparar tu certificación AWS y el AWS Community Day Ecuador, el gran evento anual de la comunidad.", None),
@@ -542,11 +536,12 @@ for n in ld['@graph']:
         n['slogan'] = 'La primera comunidad de AWS del Ecuador'
         n['description'] = 'AWS User Group Ecuador es la primera comunidad de usuarios de Amazon Web Services (AWS) en Ecuador, fundada el 10 de febrero de 2022 por Alexis Polo. Organiza meetups, talleres, retos de certificación AWS y el AWS Community Day Ecuador en Quito, Guayaquil y Cuenca.'
         n['areaServed'] = [{"@type": "Country", "name": "Ecuador"}, {"@type": "City", "name": "Quito"}, {"@type": "City", "name": "Guayaquil"}, {"@type": "City", "name": "Cuenca"}]
-        n['founder'] = {"@type": "Person", "@id": SITE + "/equipo/#alexis-polo", "name": "Alexis Polo", "jobTitle": "Líder fundador de AWS User Group Ecuador", "url": "https://www.alexispolo.com", "sameAs": ["https://www.linkedin.com/in/alexispolo", "https://www.instagram.com/aledpolo/", "https://www.alexispolo.com"]}
+        n['founder'] = {"@type": "Person", "@id": SITE + "/equipo/#alexis-polo", "name": "Alexis Polo", "jobTitle": "Fundador y líder de AWS User Group Ecuador · AWS Community Builder", "description": "Fundador de AWS User Group Ecuador, AWS Community Builder y certificado AWS Cloud Practitioner y AWS Developer Associate.", "url": "https://www.alexispolo.com", "sameAs": ["https://www.alexispolo.com", "https://www.linkedin.com/in/alexispolo", "https://www.instagram.com/aledpolo/", "https://dev.to/aledpolo"]}
         n['member'] = [{"@id": SITE + "/equipo/#alexis-polo"}, {"@id": SITE + "/equipo/#vanessa-barreiro"}, {"@id": SITE + "/equipo/#paul-rizo"}, {"@id": SITE + "/equipo/#jonathan-teran"}]
         n['knowsAbout'] += ["AWS Community Day", "Serverless", "Seguridad en la nube", "DevOps"]
     if n['@type'] == 'WebSite':
         n['alternateName'] = ["AWS Ecuador", "AWS UG Ecuador", "Comunidad AWS Ecuador"]
+    if n['@type'] == 'WebPage': n['dateModified'] = '2026-10-03'
     if n['@type'] == 'WebPage': n['primaryImageOfPage'] = SITE + '/img/community-day-2024-1600.webp'
     if n['@type'] == 'WebPage': n['name'] = 'AWS Ecuador | AWS User Group Ecuador, comunidad AWS'
     if n['@type'] == 'FAQPage': n['mainEntity'] = []
@@ -622,7 +617,7 @@ home_body = f'''
           <h2 id="comunidad-title">Aprende AWS y cloud en comunidad</h2>
         </div>
         <p>¿Buscas AWS en Ecuador? AWS User Group Ecuador es la comunidad AWS Ecuador: el punto de encuentro de quienes aprenden y trabajan con Amazon Web Services y cloud en el país, con meetups, certificación AWS y el AWS Community Day en Quito, Guayaquil y Cuenca.</p>
-        <p style="margin-top:14px">Es la primera comunidad de Amazon Web Services del país: nació el 10 de febrero de 2022 y forma parte de la red global de AWS User Groups. Es independiente y la organizan voluntarios. Llegan desarrolladores, arquitectos cloud, estudiantes y líderes de tecnología de Quito, Guayaquil y Cuenca, desde quien abre su primera cuenta de AWS hasta quien opera cargas en producción.</p>
+        <p style="margin-top:14px">Es la primera comunidad de Amazon Web Services del país: la fundó <a href="/equipo/#fundador" style="color:var(--text);font-weight:600">Alexis Polo</a> el 10 de febrero de 2022 y forma parte de la red global de AWS User Groups. Es independiente y la organizan voluntarios. Llegan desarrolladores, arquitectos cloud, estudiantes y líderes de tecnología de Quito, Guayaquil y Cuenca, desde quien abre su primera cuenta de AWS hasta quien opera cargas en producción.</p>
       </div>
       <ul class="bento">
         <li class="cell hi reveal"><span class="tag"># start_here</span><h3>De tu primera cuenta de AWS a producción.</h3><p>Aquí compartimos lo que funciona, lo que falló y lo que aprendimos en el camino.</p></li>
@@ -881,7 +876,7 @@ ev_body = f'''
     </div>
   </section>
 '''
-graph = [ORG, {"@type":"CollectionPage","@id":SITE+"/eventos/#webpage","url":SITE+"/eventos/","name":"Eventos de AWS en Ecuador","inLanguage":"es-EC","isPartOf":{"@id":SITE+"/#website"}}, crumbs("Eventos","/eventos/")] + ev_ld
+graph = [ORG, {"@type":"CollectionPage","@id":SITE+"/eventos/#webpage","dateModified":"2026-10-03","url":SITE+"/eventos/","name":"Eventos de AWS en Ecuador","inLanguage":"es-EC","isPartOf":{"@id":SITE+"/#website"}}, crumbs("Eventos","/eventos/")] + ev_ld
 open('eventos/index.html','w',encoding='utf-8').write(page('/eventos/', 'Eventos AWS Ecuador: meetups y AWS Community Day',
   'Eventos de AWS en Ecuador: meetups, talleres y AWS Community Day en Quito, Guayaquil y Cuenca, organizados por AWS User Group Ecuador.',
   dump(graph), ev_body, '/eventos/'))
@@ -893,8 +888,15 @@ for p in PEOPLE:
     if p['links']: o["sameAs"] = [u for u,_,_ in p['links']]
     if p['id'] == 'alexis-polo':
         o["url"] = "https://www.alexispolo.com"
-        o["description"] = "Líder fundador de AWS User Group Ecuador, la primera comunidad de AWS del Ecuador, fundada el 10 de febrero de 2022."
-        o["knowsAbout"] = ["Amazon Web Services", "Comunidades tecnológicas"]
+        o["jobTitle"] = "Fundador y líder de AWS User Group Ecuador · AWS Community Builder"
+        o["description"] = "Alexis Polo es el fundador y líder de AWS User Group Ecuador, la primera comunidad de AWS del Ecuador, creada el 10 de febrero de 2022. Es AWS Community Builder, certificado AWS Cloud Practitioner y AWS Developer Associate, speaker y mentor en cloud."
+        o["nationality"] = {"@type": "Country", "name": "Ecuador"}
+        o["knowsAbout"] = ["Amazon Web Services", "Cloud Computing", "Serverless", "AWS Lambda", "DevOps", "Arquitectura cloud", "Comunidades tecnológicas"]
+        o["sameAs"] = ["https://www.alexispolo.com", "https://www.linkedin.com/in/alexispolo", "https://www.instagram.com/aledpolo/", "https://dev.to/aledpolo"]
+        o["memberOf"] = [{"@id": SITE + "/#organization"}, {"@type": "Organization", "name": "AWS Community Builders"}]
+        o["hasCredential"] = [
+            {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Cloud Practitioner", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Amazon Web Services"}},
+            {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Developer – Associate", "credentialCategory": "Certification", "recognizedBy": {"@type": "Organization", "name": "Amazon Web Services"}}]
     person_ld.append(o)
 eq_body = f'''
   <section class="page-hero" aria-labelledby="page-title">
@@ -913,14 +915,26 @@ eq_body = f'''
       </div>
       <ul class="team">{team_items(False)}
       </ul>
+      <div class="founder" id="fundador">
+        <span class="eyebrow">sobre el fundador</span>
+        <h2 class="h2">Alexis Polo, fundador de AWS User Group Ecuador</h2>
+        <p>Alexis es ecuatoriano y se apasionó por el cloud por pura curiosidad: quería entender cómo funcionaba AWS. El 10 de febrero de 2022 fundó AWS User Group Ecuador con una idea simple, reunir a personas con las mismas ganas de aprender, y desde entonces lidera la primera comunidad de AWS del país.</p>
+        <p>Es <strong>AWS Community Builder</strong>, tiene las certificaciones <strong>AWS Certified Cloud Practitioner</strong> y <strong>AWS Certified Developer – Associate</strong>, y ha dado más de 20 charlas y talleres sobre AWS, serverless y cloud. Organiza meetups, el AWS Community Day Ecuador y acompaña como mentor a quienes empiezan en la nube.</p>
+        <blockquote class="founder-quote">“Cuando el conocimiento no estaba cerca, lo fuimos a buscar. Hoy lo construimos aquí para que otros puedan llegar más lejos.”</blockquote>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" href="https://www.alexispolo.com" rel="noopener" target="_blank"><i class="fa-solid fa-globe" aria-hidden="true"></i>alexispolo.com</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/alexispolo" rel="noopener" target="_blank"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a>
+        </div>
+      </div>
+
       <div class="in-action">
         <span class="eyebrow">en acción</span>
         <h2 class="h2">Así se vive la comunidad</h2>
         <div class="action-grid">
-          <figure><img src="/img/momentos/54890831244-1024.webp" srcset="/img/momentos/54890831244-480.webp 480w, /img/momentos/54890831244-1024.webp 1024w" sizes="(min-width: 768px) 50vw, 100vw" width="1024" height="683" loading="lazy" decoding="async" alt="Alexis Polo, líder fundador de AWS User Group Ecuador, habla con el público en el AWS Community Day Ecuador 2025 en Quito"><figcaption>Community Day 2025</figcaption></figure>
-          <figure><img src="/img/momentos/55090151586-480.webp" srcset="/img/momentos/55090151586-480.webp 480w, /img/momentos/55090151586-1024.webp 1024w" sizes="(min-width: 768px) 25vw, 50vw" width="1024" height="1024" loading="lazy" decoding="async" alt="Alexis Polo, fundador de AWS User Group Ecuador, da la bienvenida desde el podio del AWS Security Day"><figcaption>Security Day</figcaption></figure>
-          <figure><img src="/img/momentos/54882557068-480.webp" srcset="/img/momentos/54882557068-480.webp 480w, /img/momentos/54882557068-1024.webp 1024w" sizes="(min-width: 768px) 25vw, 50vw" width="1024" height="740" loading="lazy" decoding="async" alt="Alexis Polo presenta a los speakers en el escenario del AWS Community Day Ecuador 2025"><figcaption>Community Day 2025</figcaption></figure>
-          <figure><img src="/img/momentos/cd-salto-1024.webp" srcset="/img/momentos/cd-salto-480.webp 480w, /img/momentos/cd-salto-1024.webp 1024w" sizes="(min-width: 768px) 50vw, 100vw" width="1024" height="576" loading="lazy" decoding="async" alt="Alexis Polo, líder de AWS User Group Ecuador, celebra con los asistentes frente al letrero de AWS Community Day Ecuador"><figcaption>Community Day</figcaption></figure>
+          <figure><img src="/img/momentos/55516473143-1024.webp" srcset="/img/momentos/55516473143-480.webp 480w, /img/momentos/55516473143-1024.webp 1024w" sizes="(min-width: 768px) 50vw, 100vw" width="1024" height="683" loading="lazy" decoding="async" alt="Voluntarios del equipo de registro reciben a los participantes del AWS Community Day Ecuador 2026"><figcaption>Voluntarios · Community Day 2026</figcaption></figure>
+          <figure><img src="/img/momentos/55163781546-480.webp" srcset="/img/momentos/55163781546-480.webp 480w, /img/momentos/55163781546-1024.webp 1024w" sizes="(min-width: 768px) 25vw, 50vw" width="1024" height="768" loading="lazy" decoding="async" alt="Foto grupal del encuentro de mujeres en tecnología Inspirando futuras líderes extraordinarias"><figcaption>Mujeres en tecnología</figcaption></figure>
+          <figure><img src="/img/momentos/55090417689-480.webp" srcset="/img/momentos/55090417689-480.webp 480w, /img/momentos/55090417689-1024.webp 1024w" sizes="(min-width: 768px) 25vw, 50vw" width="1024" height="683" loading="lazy" decoding="async" alt="Foto grupal al aire libre de los asistentes del AWS Security Day"><figcaption>Security Day</figcaption></figure>
+          <figure><img src="/img/momentos/54890877840-1024.webp" srcset="/img/momentos/54890877840-480.webp 480w, /img/momentos/54890877840-1024.webp 1024w" sizes="(min-width: 768px) 50vw, 100vw" width="1024" height="683" loading="lazy" decoding="async" alt="Auditorio lleno durante una charla del AWS Community Day Ecuador 2025"><figcaption>Community Day 2025</figcaption></figure>
         </div>
       </div>
     </div>
@@ -944,7 +958,7 @@ eq_body = f'''
     </div>
   </section>
 '''
-graph = [ORG, {"@type":"AboutPage","@id":SITE+"/equipo/#webpage","url":SITE+"/equipo/","name":"Equipo de AWS User Group Ecuador","inLanguage":"es-EC","isPartOf":{"@id":SITE+"/#website"}}, crumbs("Equipo","/equipo/")] + person_ld
+graph = [ORG, {"@type":"AboutPage","@id":SITE+"/equipo/#webpage","dateModified":"2026-10-03","url":SITE+"/equipo/","name":"Equipo de AWS User Group Ecuador","inLanguage":"es-EC","isPartOf":{"@id":SITE+"/#website"}}, crumbs("Equipo","/equipo/")] + person_ld
 open('equipo/index.html','w',encoding='utf-8').write(page('/equipo/',
   'Alexis Polo, líder fundador | Equipo AWS User Group Ecuador',
   'Alexis Polo es el líder fundador de AWS User Group Ecuador, la primera comunidad AWS del país. Lidera junto a Vanessa Barreiro, Paul Rizo y Jonathan Teran.',
@@ -977,7 +991,7 @@ def moments_subset(cats, limit=None):
 
 def webpage(kind, path, name, desc, extra=None):
     o = {"@type": kind, "@id": SITE + path + "#webpage", "url": SITE + path, "name": name, "description": desc,
-         "inLanguage": "es-EC", "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": SITE + "/#organization"}}
+         "inLanguage": "es-EC", "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": SITE + "/#organization"}, "dateModified": "2026-10-03"}
     if extra: o.update(extra)
     return o
 
@@ -1274,7 +1288,7 @@ an_body = f'''
         <h2 class="h2" id="trayectoria-title">5 años construyendo la comunidad AWS Ecuador</h2>
       </div>
       <div class="body">
-        <p>Lo que empezó el 10 de febrero de 2022 como un grupo de personas con ganas de aprender Amazon Web Services se convirtió en la primera comunidad AWS del Ecuador: más de 1.400 miembros en Meetup, cuatro ediciones del AWS Community Day y eventos en Guayaquil, Quito y Cuenca.</p>
+        <p>Lo que empezó el 10 de febrero de 2022, cuando Alexis Polo fundó el grupo con la idea simple de reunir a personas con ganas de aprender Amazon Web Services, se convirtió en la primera comunidad AWS del Ecuador: más de 1.400 miembros en Meetup, cuatro ediciones del AWS Community Day y eventos en Guayaquil, Quito y Cuenca.</p>
         <p>En estos años organizamos meetups presenciales y online, talleres, retos de certificación AWS, el AWS Security Day con más de 160 asistentes y encuentros de mujeres en tecnología. Llevamos la Mitad del Mundo hasta AWS re:Invent en Las Vegas y crecimos junto a otras comunidades del país: User Groups, AWS Women Ecuador y Student Builder Groups en universidades.</p>
         <p>Detrás de todo esto hay voluntarios, speakers, sponsors y cada persona que llegó a su primer meetup. Estos 5 años son de toda la comunidad.</p>
       </div>

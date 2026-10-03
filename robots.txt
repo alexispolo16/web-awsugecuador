@@ -1,4 +1,41 @@
+# AWS User Group Ecuador — https://www.awsugecuador.com
+# Todo el sitio es público. Se permite explícitamente a buscadores y asistentes de IA.
+
 User-agent: *
+Allow: /
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Google (Gemini) y Bing (Copilot)
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# Perplexity, Apple
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://www.awsugecuador.com/sitemap.xml

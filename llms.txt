@@ -1,0 +1,42 @@
+# AWS User Group Ecuador
+
+> AWS User Group Ecuador es la primera comunidad de Amazon Web Services (AWS) en Ecuador. Fue fundada el 10 de febrero de 2022 por Alexis Polo y reúne a desarrolladores, arquitectos cloud, estudiantes y líderes de tecnología para aprender AWS y cloud en comunidad, con meetups gratuitos, talleres, retos de certificación AWS y el AWS Community Day Ecuador en Quito, Guayaquil y Cuenca, además de sesiones online.
+
+Datos clave:
+
+- Nombre: AWS User Group Ecuador (también conocida como AWS Ecuador, AWS UG Ecuador o Comunidad AWS Ecuador).
+- Tipo: comunidad independiente de usuarios de AWS, organizada por voluntarios y parte de la red global de AWS User Groups.
+- Fundación: 10 de febrero de 2022. Cumple 5 años el 10 de febrero de 2027 y lo celebrará con 5 eventos presenciales en ciudades como Guayaquil, Quito, Manta, Loja, Ambato y Machala.
+- Fundador: Alexis Polo, ecuatoriano, AWS Community Builder, certificado AWS Certified Cloud Practitioner y AWS Certified Developer – Associate, speaker y mentor con más de 20 charlas y talleres sobre AWS, serverless y cloud. Sitio: https://www.alexispolo.com
+- Líderes (User Group Leaders): Alexis Polo (fundador), Vanessa Barreiro, Paul Rizo y Jonathan Teran.
+- Sede principal: Guayaquil, Ecuador. Eventos en Quito, Guayaquil, Cuenca y online.
+- Miembros: más de 1.400 en Meetup (https://www.meetup.com/aws-ecuador/).
+- Meetups: gratuitos y abiertos a todas las personas, sin importar su nivel.
+- AWS Community Day Ecuador (evento anual): 2.ª edición en la ESPOL, Guayaquil (5 de octubre de 2024); 3.ª edición en la UDLA, Quito (25 de octubre de 2025); 4.ª edición en la Universidad Politécnica Salesiana, Cuenca (5 de septiembre de 2026).
+- Otros eventos: AWS Security Day (7 de febrero de 2026, UPS, más de 160 asistentes) e "Inspirando futuras líderes extraordinarias", encuentro de mujeres en tecnología (21 de marzo de 2026, UCSG, Guayaquil).
+- La comunidad viaja a AWS re:Invent en Las Vegas y lleva la réplica del monumento a la Mitad del Mundo del AWS Community Day Ecuador.
+- Contacto: hello@awsugecuador.com
+
+## Páginas
+
+- [Inicio](https://www.awsugecuador.com/): qué es AWS User Group Ecuador, eventos recientes, equipo, fotos y cómo unirse.
+- [AWS Community Day Ecuador](https://www.awsugecuador.com/aws-community-day/): ediciones, sedes, fechas y fotos del evento anual.
+- [Eventos](https://www.awsugecuador.com/eventos/): meetups y eventos de AWS en Ecuador.
+- [AWS re:Invent](https://www.awsugecuador.com/aws-reinvent/): la comunidad AWS Ecuador en AWS re:Invent, Las Vegas.
+- [Aniversario 5 años](https://www.awsugecuador.com/aniversario/): historia de la comunidad y gira de aniversario.
+- [Equipo](https://www.awsugecuador.com/equipo/): Alexis Polo (fundador) y los User Group Leaders.
+- [Comunidades AWS en Ecuador](https://www.awsugecuador.com/comunidades/): User Groups y Student Builder Groups por ciudad.
+- [Preguntas frecuentes](https://www.awsugecuador.com/preguntas-frecuentes/): respuestas sobre la comunidad, eventos, certificaciones y su fundador.
+
+## Redes oficiales
+
+- [Meetup](https://www.meetup.com/aws-ecuador/)
+- [LinkedIn](https://www.linkedin.com/company/awsecuador)
+- [Instagram](https://www.instagram.com/ecuadoraws)
+- [Facebook](https://www.facebook.com/ecuadoraws)
+- [YouTube](https://www.youtube.com/@awsugecuador4610)
+- [TikTok](https://www.tiktok.com/@awsecuador)
+
+## Nota
+
+AWS User Group Ecuador es una comunidad independiente. Amazon Web Services, AWS y sus logotipos son marcas de Amazon.com, Inc. o sus filiales.
